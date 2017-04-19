@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="ModeloDeDominio" namespace="CapaDominio" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="ModeloDeDominio" backend="mssql" default-schema="dbo" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="CapaDominio" default="true">
+      <orm:class name="Jugador" uniqueId="7b9fc87d-db02-4b9b-b798-3b6ae5859323">
+        <orm:table name="Jugador" />
+        <orm:identity>
+          <orm:single-field field-name="idJugador" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="idJugador" property="IdJugador" behavior="readwrite" uniqueId="1727ebdc-83af-43b7-8a38-99721df4d994" type="System.Int32">
+          <orm:column name="idJugador" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="nombre" property="Nombre" behavior="readwrite" uniqueId="1fb13c93-5e4c-472c-9054-37b564d8a7e5" type="System.String">
+          <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="apellido" property="Apellido" behavior="readwrite" uniqueId="1144a7a5-031d-450a-8df4-0b113bdc404a" type="System.String">
+          <orm:column name="apellido" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="fechaNacimiento" property="FechaNacimiento" behavior="readwrite" uniqueId="ba77cd4c-45d3-4528-afbf-04cfac1dcd4d" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaNacimiento" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="Jugador">
+        <orm:column name="idJugador" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="apellido" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="fechaNacimiento" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:source-strategy>Property</orm:source-strategy>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Conn</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>Data Source=COPADE_077\SQLEXPRESS;Initial Catalog=FHN;Integrated Security=True</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+      <NavigationPropertyRules>
+        <IsPrefixSuffixEnabled>false</IsPrefixSuffixEnabled>
+      </NavigationPropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <OutputProjectName>CapaDominio</OutputProjectName>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MsSql</Backend>
+        <ProviderName>System.Data.SqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="7b9fc87d-db02-4b9b-b798-3b6ae5859323" name="Jugador" namespace="CapaDominio" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="1727ebdc-83af-43b7-8a38-99721df4d994" name="IdJugador" type="Int32" label="IdJugador : Int32" kind="Persistent" identity="true" fieldName="idJugador" />
+      <Property Id="1144a7a5-031d-450a-8df4-0b113bdc404a" name="Apellido" label="Apellido : String" kind="Persistent" fieldName="apellido" />
+      <Property Id="ba77cd4c-45d3-4528-afbf-04cfac1dcd4d" name="FechaNacimiento" type="DateTime" label="FechaNacimiento : DateTime" nullable="true" kind="Persistent" fieldName="fechaNacimiento" />
+      <Property Id="1fb13c93-5e4c-472c-9054-37b564d8a7e5" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="b941658f-f2ad-4529-8d0a-aef0a551f541">
+      <domainContainer name="ModeloDeDominio" namespace="CapaDominio" showPropertiesCompartment="true">
+        <entitySetProperty name="Jugadors" namespace="CapaDominio" type="Jugador" label="Jugadors : IQueryable&lt;CapaDominio.Jugador&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

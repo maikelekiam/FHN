@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityDiagrams>
+  <entityDiagramsDiagram dslVersion="2.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ModeloDeDominio" isDefault="true">
+    <DomainModelMoniker name="/ModeloDeDominio" />
+    <nestedChildShapes>
+      <classShape Id="303cfa0d-ed6d-4c72-b7dd-022694d7fb83" absoluteBounds="0.75, 0.75, 1.5, 2.1473746744791669">
+        <DomainClassMoniker name="/ModeloDeDominio/Jugador" />
+        <nestedChildShapes>
+          <elementListCompartment Id="f1a480b3-1f6d-41bb-8699-2a23a8ea53dc" absoluteBounds="0.765, 1.2599999999999998, 1.4700000000000002, 1.0185953776041665" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="206f4498-5270-481b-8bda-db11d95da081" absoluteBounds="0.765, 2.2885953776041665, 1.4700000000000002, 0.2493896484375" name="ImplementationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          <elementListCompartment Id="01b78d6f-6913-4022-b856-49202976dae5" absoluteBounds="0.765, 2.5479850260416663, 1.4700000000000002, 0.2493896484375" name="NavigationCompartment" titleTextColor="Black" itemTextColor="Black" />
+        </nestedChildShapes>
+      </classShape>
+    </nestedChildShapes>
+  </entityDiagramsDiagram>
+</EntityDiagrams>
