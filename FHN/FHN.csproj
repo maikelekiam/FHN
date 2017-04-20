@@ -164,7 +164,7 @@
     <Content Include="AltaJugador.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\bootstrap-datepicker.css" />
-    <Content Include="css\bootstrap-modal-carousel.css" />
+    <Content Include="css\bootstrap-select.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\panel-collapsible.css" />
     <Content Include="css\select2.css" />
@@ -178,7 +178,6 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery-1.12.3.js" />
     <Content Include="js\panel-collapsible.js" />
-    <Content Include="js\select2.full.js" />
     <Content Include="js\select2.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

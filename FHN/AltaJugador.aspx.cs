@@ -13,5 +13,20 @@ namespace FHN
         {
 
         }
+
+        protected void btnGuardarJugador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void dgvJugador_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+
+        }
+
+        protected void dgvJugador_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
     }
 }
