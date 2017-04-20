@@ -22,18 +22,18 @@ using CapaDominio;
 
 namespace CapaDominio	
 {
-	public partial class Jugador
+	public partial class Club
 	{
-		private int idJugador;
-		public virtual int IdJugador
+		private int idClub;
+		public virtual int IdClub
 		{
 			get
 			{
-				return this.idJugador;
+				return this.idClub;
 			}
 			set
 			{
-				this.idJugador = value;
+				this.idClub = value;
 			}
 		}
 		
@@ -50,81 +50,42 @@ namespace CapaDominio
 			}
 		}
 		
-		private string apellido;
-		public virtual string Apellido
+		private string nombreInstitucional;
+		public virtual string NombreInstitucional
 		{
 			get
 			{
-				return this.apellido;
+				return this.nombreInstitucional;
 			}
 			set
 			{
-				this.apellido = value;
+				this.nombreInstitucional = value;
 			}
 		}
 		
-		private DateTime? fechaNacimiento;
-		public virtual DateTime? FechaNacimiento
+		private string personeriaJuridica;
+		public virtual string PersoneriaJuridica
 		{
 			get
 			{
-				return this.fechaNacimiento;
+				return this.personeriaJuridica;
 			}
 			set
 			{
-				this.fechaNacimiento = value;
+				this.personeriaJuridica = value;
 			}
 		}
 		
-		private string tipo;
-		public virtual string Tipo
+		private string anioAfiliacion;
+		public virtual string AnioAfiliacion
 		{
 			get
 			{
-				return this.tipo;
+				return this.anioAfiliacion;
 			}
 			set
 			{
-				this.tipo = value;
-			}
-		}
-		
-		private string telefono;
-		public virtual string Telefono
-		{
-			get
-			{
-				return this.telefono;
-			}
-			set
-			{
-				this.telefono = value;
-			}
-		}
-		
-		private string sector;
-		public virtual string Sector
-		{
-			get
-			{
-				return this.sector;
-			}
-			set
-			{
-				this.sector = value;
-			}
-		}
-		
-		private string ficha;
-		public virtual string Ficha
-		{
-			get
-			{
-				return this.ficha;
-			}
-			set
-			{
-				this.ficha = value;
+				this.anioAfiliacion = value;
 			}
 		}
 		
@@ -141,55 +102,38 @@ namespace CapaDominio
 			}
 		}
 		
-		private string documento;
-		public virtual string Documento
+		private string idInterno;
+		public virtual string IdInterno
 		{
 			get
 			{
-				return this.documento;
+				return this.idInterno;
 			}
 			set
 			{
-				this.documento = value;
+				this.idInterno = value;
 			}
 		}
 		
-		private int? club;
-		public virtual int? Club
+		private string telefono;
+		public virtual string Telefono
 		{
 			get
 			{
-				return this.club;
+				return this.telefono;
 			}
 			set
 			{
-				this.club = value;
+				this.telefono = value;
 			}
 		}
 		
-		private string celular;
-		public virtual string Celular
+		private IList<Jugador> jugadors = new List<Jugador>();
+		public virtual IList<Jugador> Jugadors
 		{
 			get
 			{
-				return this.celular;
-			}
-			set
-			{
-				this.celular = value;
-			}
-		}
-		
-		private Club club1;
-		public virtual Club Club1
-		{
-			get
-			{
-				return this.club1;
-			}
-			set
-			{
-				this.club1 = value;
+				return this.jugadors;
 			}
 		}
 		

@@ -58,6 +58,14 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<Club> Clubs 
+		{
+			get
+			{
+				return this.GetAll<Club>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -80,6 +88,10 @@ namespace CapaDominio
 	public interface IModeloDeDominioUnitOfWork : IUnitOfWork
 	{
 		IQueryable<Jugador> Jugadors
+		{
+			get;
+		}
+		IQueryable<Club> Clubs
 		{
 			get;
 		}
