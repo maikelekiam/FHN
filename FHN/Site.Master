@@ -34,45 +34,67 @@
         <asp:ScriptManager runat="server">
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <!-- MENU -->
+        <div class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Sistema FHN</a>
+                    <a class="navbar-brand" runat="server" href="~/Default.aspx">
+                        <h2>Sistema FHN</h2>
+                    </a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/AltaClub.aspx">Clubes</a></li>
-                        <li><a runat="server" href="~/AltaJugador.aspx">Jugadores</a></li>
-                        <li><a runat="server" href="~/Cuota.aspx">Cuotas</a></li>
-                        <li><a runat="server" href="~/Pago.aspx">Pagos</a></li>
-                    </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <div class="btn-group">
+                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">JUGADORES <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/AltaJugador.aspx">Alta de Jugador</a></li>
+                                    <li><a runat="server" href="~/EditarJugador.aspx">Editar Jugador</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/ListarJugadoresActivos.aspx">Lista de Jugadores Activos</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">CLUBES<span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/AltaClub.aspx">Alta de Club</a></li>
+                                    <li><a runat="server" href="~/EditarClub.aspx">Editar Club</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/ListarClubesActivos.aspx">Lista de Clubes Activos</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">CUOTAS<span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/AltaCuota.aspx">Alta de Cuota</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PAGOS<span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/AltaPago.aspx">Ingresar Pago</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PLANIFICACION <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a runat="server" href="~/Temporada.aspx">Temporada</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/Torneo.aspx">Torneo</a></li>
+                                    <li class="divider"></li>
+                                    <li><a runat="server" href="~/Division.aspx">Division</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--BODY-->
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <!--Aca iria el contenido de cada pagina-->
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
@@ -80,8 +102,5 @@
             </footer>
         </div>
     </form>
-
-
-    
 </body>
 </html>
