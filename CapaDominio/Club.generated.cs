@@ -18,7 +18,6 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
-using CapaDominio;
 
 namespace CapaDominio	
 {
@@ -125,15 +124,6 @@ namespace CapaDominio
 			set
 			{
 				this.telefono = value;
-			}
-		}
-		
-		private IList<Jugador> jugadors = new List<Jugador>();
-		public virtual IList<Jugador> Jugadors
-		{
-			get
-			{
-				return this.jugadors;
 			}
 		}
 		

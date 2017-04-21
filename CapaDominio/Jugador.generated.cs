@@ -18,7 +18,6 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
-using CapaDominio;
 
 namespace CapaDominio	
 {
@@ -47,32 +46,6 @@ namespace CapaDominio
 			set
 			{
 				this.nombre = value;
-			}
-		}
-		
-		private string apellido;
-		public virtual string Apellido
-		{
-			get
-			{
-				return this.apellido;
-			}
-			set
-			{
-				this.apellido = value;
-			}
-		}
-		
-		private DateTime? fechaNacimiento;
-		public virtual DateTime? FechaNacimiento
-		{
-			get
-			{
-				return this.fechaNacimiento;
-			}
-			set
-			{
-				this.fechaNacimiento = value;
 			}
 		}
 		
@@ -128,6 +101,19 @@ namespace CapaDominio
 			}
 		}
 		
+		private DateTime? fechaNacimiento;
+		public virtual DateTime? FechaNacimiento
+		{
+			get
+			{
+				return this.fechaNacimiento;
+			}
+			set
+			{
+				this.fechaNacimiento = value;
+			}
+		}
+		
 		private string email;
 		public virtual string Email
 		{
@@ -180,16 +166,16 @@ namespace CapaDominio
 			}
 		}
 		
-		private Club club1;
-		public virtual Club Club1
+		private string apellido;
+		public virtual string Apellido
 		{
 			get
 			{
-				return this.club1;
+				return this.apellido;
 			}
 			set
 			{
-				this.club1 = value;
+				this.apellido = value;
 			}
 		}
 		

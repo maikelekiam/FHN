@@ -72,13 +72,13 @@
 
             <!--FICHA + SECTOR-->
             <div class="form-group">
-                <asp:Label ID="lblFicha" runat="server" Text="Ficha" CssClass="col-md-2 control-label"></asp:Label>
+                <asp:Label ID="lblFicha" runat="server" Text="FICHA" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
                     <asp:TextBox ID="txtFicha" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
                 <asp:Label ID="lblSector" runat="server" Text="SECTOR" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
-                    <asp:DropDownList ID="DropDownList1" runat="server"
+                    <asp:DropDownList ID="ddlSector" runat="server"
                         CssClass="selectpicker form-control show-tick"
                         data-live-search="true"
                         data-width="280px">
@@ -116,36 +116,6 @@
                     <asp:Button ID="btnGuardarJugador" runat="server" Text="Guardar Jugador" CssClass="btn btn-success form-control" OnClick="btnGuardarJugador_Click" />
                 </div>
             </div>
-
-            <!--GRILLA PARA MOSTRAR LOS JUGADORES DE LA BASE DE DATOS-->
-            <h4>GRILLA DE JUGADORES</h4>
-            <div class="form-group">
-                <div class="col-md-9 col-md-offset-1">
-                    <asp:GridView ID="dgvJugador" runat="server" AutoGenerateColumns="false"
-                        CssClass="table table-hover table-bordered table-striped" BorderWidth="2px"
-                        GridLines="Both" EmptyDataText="No existen jugadores" ShowHeaderWhenEmpty="true"
-                        OnSelectedIndexChanging="dgvJugador_SelectedIndexChanging"
-                        OnRowDeleting="dgvJugador_RowDeleting">
-                        <Columns>
-                            <asp:BoundField HeaderText="ID" DataField="idPersona" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Nombre" DataField="nombre" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Apellido" DataField="apellido" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Tipo" DataField="tipoDocumento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Documento" DataField="documento" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Fecha Nac" DataField="fechaNacimiento" DataFormatString="{0:d}" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:BoundField HeaderText="Club" DataField="club" ItemStyle-HorizontalAlign="Center" HeaderStyle-BackColor="#cccccc" />
-                            <asp:ButtonField Text="Editar" CommandName="select" HeaderStyle-BackColor="#cccccc" />
-                            <asp:ButtonField Text="Borrar" CommandName="delete" HeaderStyle-BackColor="#cccccc" />
-                        </Columns>
-                    </asp:GridView>
-                </div>
-            </div>
         </asp:Panel>
     </div>
-
-
-
-
-
-
 </asp:Content>

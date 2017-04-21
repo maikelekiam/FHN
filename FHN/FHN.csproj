@@ -168,6 +168,7 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\panel-collapsible.css" />
     <Content Include="css\select2.css" />
+    <Content Include="EditarJugador.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="js\bootstrap-collapse.js" />
     <Content Include="js\bootstrap-datepicker.js" />
@@ -273,6 +274,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarJugador.aspx.cs">
+      <DependentUpon>EditarJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarJugador.aspx.designer.cs">
+      <DependentUpon>EditarJugador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

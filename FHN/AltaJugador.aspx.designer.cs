@@ -175,13 +175,13 @@ namespace FHN {
         protected global::System.Web.UI.WebControls.Label lblSector;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlSector control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSector;
         
         /// <summary>
         /// lblIsActivo control.
@@ -245,14 +245,5 @@ namespace FHN {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarJugador;
-        
-        /// <summary>
-        /// dgvJugador control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvJugador;
     }
 }
