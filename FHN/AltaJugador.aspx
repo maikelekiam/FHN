@@ -7,7 +7,7 @@
                 <h2>Formulario de ALTA Jugador</h2>
             </div>
 
-            <!--NOMBRE + APELLIDO--> <!--comentario de prueba-->
+            <!--NOMBRE + APELLIDO-->
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
