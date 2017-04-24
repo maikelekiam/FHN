@@ -16,5 +16,10 @@ namespace CapaNegocio
         {
             jugadorRepo.GuardarJugador(jugador);
         }
+
+        public IEnumerable<Jugador> ListarJugadores()
+        {
+            return jugadorRepo.ListarJugadores();
+        }
     }
 }

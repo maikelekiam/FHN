@@ -51,7 +51,7 @@
                                     <li><a runat="server" href="~/AltaJugador.aspx">Alta de Jugador</a></li>
                                     <li><a runat="server" href="~/EditarJugador.aspx">Editar Jugador</a></li>
                                     <li class="divider"></li>
-                                    <li><a runat="server" href="~/ListarJugadoresActivos.aspx">Lista de Jugadores Activos</a></li>
+                                    <li><a runat="server" href="~/ListarJugadores.aspx">Lista de Jugadores</a></li>
                                 </ul>
                             </div>
                             <div class="btn-group">

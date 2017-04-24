@@ -18,5 +18,16 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
             }
         }
+
+        // METODO PARA MOSTRAR LAS PERSONAS
+        public IEnumerable<Jugador> ListarJugadores()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Jugador> result = modeloDeDominio.Jugadors.ToList();
+
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
     }
 }
