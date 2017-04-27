@@ -29,5 +29,28 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+
+        // METODO PARA ACTUALIZAR UN JUGADOR
+        public void ActualizarJugador(Jugador jugador)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.AttachCopy(jugador);
+                modeloDeDominio.SaveChanges();
+            }
+        }
+
+        public List<Jugador> ListarUnicoJugador(int id)
+        {
+            List<Jugador> datosLista;
+
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Jugador> listaDeJugadores = modeloDeDominio.Jugadors.Where(c => c.IdJugador == id).ToList();
+                datosLista = (List<Jugador>)listaDeJugadores;
+            }
+
+            return datosLista;
+        }
     }
 }

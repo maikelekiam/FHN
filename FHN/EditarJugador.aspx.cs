@@ -12,8 +12,7 @@ namespace FHN
 {
     public partial class EditarJugador : System.Web.UI.Page
     {
-        List<Jugador> datos;
-        DataTable datosDataTable;
+        IEnumerable<Jugador> datos;
         JugadorNego jugadorNego = new JugadorNego();
         
         protected void Page_Load(object sender, EventArgs e)
@@ -26,19 +25,51 @@ namespace FHN
 
         protected void ddlActualizarJugador_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            lblIdJugador.Text = ddlActualizarJugador.SelectedValue.ToString();
+            CargarJugador(Convert.ToInt32(lblIdJugador.Text));
         }
 
         private void CargarListaJugadores()
         {
-            datos = (List<Jugador>)jugadorNego.ListarJugadores();
+            IList<Jugador> nombreCompleto = jugadorNego.ListarJugadores().Select(j => new Jugador() { Nombre = "(" + j.IdJugador + ") " + j.Nombre + " " + j.Apellido, IdJugador = j.IdJugador }).OrderBy(c => c.IdJugador).ToList();
 
-            datosDataTable.Columns.Add("nombre_completo", typeof(string), "idJugador+ ' '+ nombre");
-
-            ddlActualizarJugador.DataSource = datosDataTable;
-            ddlActualizarJugador.DataTextField = "nombre_completo";
-            ddlActualizarJugador.DataValueField = "idjugador";
+            ddlActualizarJugador.DataSource = nombreCompleto;
+            //ddlActualizarPersona.DataTextField = "nombre_completo";
+            ddlActualizarJugador.DataValueField = "idJugador";
             ddlActualizarJugador.DataBind();
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarJugador();
+        }
+
+        private void ActualizarJugador()
+        {
+            Jugador jugador = new Jugador();
+
+
+
+
+
+
+
+        }
+
+        private void CargarJugador(int id)
+        {
+            //datos = jugadorNego.ListarUnicoJugador(id);
+
+            //datosDataTable = ConvertirListaToDataTable(datos);
+
+            //DataRow row = datosDataTable.Rows[0];
+            //txtNombre.Text = Convert.ToString(row[1]);
+            //txtApellido.Text = Convert.ToString(row[2]);
+            //txtEdad.Text = Convert.ToString(row[3]);
+            //txtDireccion.Text = Convert.ToString(row[4]);
+
+
+
         }
     }
 }
