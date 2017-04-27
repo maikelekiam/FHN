@@ -21,5 +21,15 @@ namespace CapaNegocio
         {
             return jugadorRepo.ListarJugadores();
         }
+
+        public void ActualizarJugador(Jugador jugador)
+        {
+            jugadorRepo.ActualizarJugador(jugador);
+        }
+
+        public List<Jugador> ListarUnicoJugador(int id)
+        {
+            return jugadorRepo.ListarUnicoJugador(id);
+        }
     }
 }
