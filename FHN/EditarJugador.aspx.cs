@@ -31,14 +31,14 @@ namespace FHN
 
         private void CargarListaJugadores()
         {
-            datos = (List<Jugador>)jugadorNego.ListarJugadores();
+            //datos = (List<Jugador>)jugadorNego.ListarJugadores();
 
-            datosDataTable.Columns.Add("nombre_completo", typeof(string), "idJugador+ ' '+ nombre");
+            //datosDataTable.Columns.Add("nombre_completo", typeof(string), "idJugador+ ' '+ nombre");
 
-            ddlActualizarJugador.DataSource = datosDataTable;
-            ddlActualizarJugador.DataTextField = "nombre_completo";
-            ddlActualizarJugador.DataValueField = "idjugador";
-            ddlActualizarJugador.DataBind();
+            //ddlActualizarJugador.DataSource = datosDataTable;
+            //ddlActualizarJugador.DataTextField = "nombre_completo";
+            //ddlActualizarJugador.DataValueField = "idjugador";
+            //ddlActualizarJugador.DataBind();
         }
     }
 }
