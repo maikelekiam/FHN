@@ -9,18 +9,7 @@
     <title>FHN</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
-    <link href="css/panel-collapsible.css" rel="stylesheet" />
-    <link href="css/select2.css" rel="stylesheet" />
     <link href="css/bootstrap-select.css" rel="stylesheet" />
-
-    <script src="js/jquery-1.12.3.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>
-    <script src="js/panel-collapsible.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -102,5 +91,11 @@
             </footer>
         </div>
     </form>
+
+    <script src="js/jquery-1.12.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+
 </body>
 </html>
