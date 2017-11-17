@@ -18,6 +18,7 @@ using Telerik.OpenAccess.Metadata;
 using Telerik.OpenAccess.Data.Common;
 using Telerik.OpenAccess.Metadata.Fluent;
 using Telerik.OpenAccess.Metadata.Fluent.Advanced;
+using CapaDominio;
 
 namespace CapaDominio	
 {
@@ -140,19 +141,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private int? club;
-		public virtual int? Club
-		{
-			get
-			{
-				return this.club;
-			}
-			set
-			{
-				this.club = value;
-			}
-		}
-		
 		private string celular;
 		public virtual string Celular
 		{
@@ -176,6 +164,45 @@ namespace CapaDominio
 			set
 			{
 				this.apellido = value;
+			}
+		}
+		
+		private int? idClub;
+		public virtual int? IdClub
+		{
+			get
+			{
+				return this.idClub;
+			}
+			set
+			{
+				this.idClub = value;
+			}
+		}
+		
+		private string domicilio;
+		public virtual string Domicilio
+		{
+			get
+			{
+				return this.domicilio;
+			}
+			set
+			{
+				this.domicilio = value;
+			}
+		}
+		
+		private Club club;
+		public virtual Club Club
+		{
+			get
+			{
+				return this.club;
+			}
+			set
+			{
+				this.club = value;
 			}
 		}
 		

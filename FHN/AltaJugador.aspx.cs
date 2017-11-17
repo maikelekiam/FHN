@@ -19,7 +19,10 @@ namespace FHN
 
 
         }
-
+        protected void btnGuardarJugador_Click(object sender, EventArgs e)
+        {
+            GuardarJugador();
+        }
         private void GuardarJugador()
         {
             Jugador jugador = new Jugador();
@@ -33,7 +36,7 @@ namespace FHN
             jugador.Ficha = txtFicha.Text;
             jugador.Sector = ddlSector.SelectedValue.ToString();
             jugador.Tipo = ddlTipoDocumento.SelectedValue.ToString();
-            jugador.Club = Convert.ToInt32(txtClub.Text);
+            //jugador.Club = Convert.ToInt32(txtClub.Text);
             jugador.Email = txtEmail.Text;
 
 
@@ -49,10 +52,7 @@ namespace FHN
 
         }
 
-        protected void btnGuardarJugador_Click(object sender, EventArgs e)
-        {
-            GuardarJugador();
-        }
+
 
     }
 }
