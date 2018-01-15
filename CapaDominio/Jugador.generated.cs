@@ -89,19 +89,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private string ficha;
-		public virtual string Ficha
-		{
-			get
-			{
-				return this.ficha;
-			}
-			set
-			{
-				this.ficha = value;
-			}
-		}
-		
 		private string email;
 		public virtual string Email
 		{
@@ -216,6 +203,32 @@ namespace CapaDominio
 			set
 			{
 				this.fechaNacAnio = value;
+			}
+		}
+		
+		private string numeroSocio;
+		public virtual string NumeroSocio
+		{
+			get
+			{
+				return this.numeroSocio;
+			}
+			set
+			{
+				this.numeroSocio = value;
+			}
+		}
+		
+		private bool? activo;
+		public virtual bool? Activo
+		{
+			get
+			{
+				return this.activo;
+			}
+			set
+			{
+				this.activo = value;
 			}
 		}
 		

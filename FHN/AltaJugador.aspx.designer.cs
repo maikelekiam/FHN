@@ -166,22 +166,58 @@ namespace FHN {
         protected global::System.Web.UI.WebControls.TextBox txtCelular;
         
         /// <summary>
-        /// lblFicha control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblFicha;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// txtFicha control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFicha;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// lblDomicilio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDomicilio;
+        
+        /// <summary>
+        /// txtDomicilio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDomicilio;
+        
+        /// <summary>
+        /// lblNumeroSocio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumeroSocio;
+        
+        /// <summary>
+        /// txtNumeroSocio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroSocio;
         
         /// <summary>
         /// lblSector control.
@@ -202,24 +238,6 @@ namespace FHN {
         protected global::System.Web.UI.WebControls.DropDownList ddlSector;
         
         /// <summary>
-        /// lblIsActivo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIsActivo;
-        
-        /// <summary>
-        /// chkIsActivo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkIsActivo;
-        
-        /// <summary>
         /// lblClub control.
         /// </summary>
         /// <remarks>
@@ -229,31 +247,31 @@ namespace FHN {
         protected global::System.Web.UI.WebControls.Label lblClub;
         
         /// <summary>
-        /// txtClub control.
+        /// ddlClub control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClub;
+        protected global::System.Web.UI.WebControls.DropDownList ddlClub;
         
         /// <summary>
-        /// lblEmail control.
+        /// lblActivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.Label lblActivo;
         
         /// <summary>
-        /// txtEmail control.
+        /// chkActivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.CheckBox chkActivo;
         
         /// <summary>
         /// btnGuardarJugador control.

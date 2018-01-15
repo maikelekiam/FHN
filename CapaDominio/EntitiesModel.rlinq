@@ -24,9 +24,6 @@
         <orm:field name="sector" property="Sector" behavior="readwrite" uniqueId="f5a324af-b726-49c5-954a-1aa895010686" type="System.String">
           <orm:column name="sector" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="ficha" property="Ficha" behavior="readwrite" uniqueId="f30b1031-ec64-4655-a2c1-fce55b3b8ce1" type="System.String">
-          <orm:column name="ficha" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
-        </orm:field>
         <orm:field name="email" property="Email" behavior="readwrite" uniqueId="f4fecbe4-94e8-4d9c-86cf-be424603bc67" type="System.String">
           <orm:column name="email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
@@ -54,10 +51,16 @@
         <orm:field name="fechaNacAnio" property="FechaNacAnio" behavior="readwrite" uniqueId="c91b4ee0-c17d-4cdd-a683-05a7035b6b5b" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="fechaNacAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
-        <orm:field name="club" property="Club" behavior="readwrite" uniqueId="09d964e2-2518-42ca-a8fe-6928162ec1ce" type="CapaDominio.Club">
-          <orm:reference uniqueId="f2a77c1f-87b4-4638-bee3-30d63b6a17a3" association-name="JugadorHasClub">
+        <orm:field name="numeroSocio" property="NumeroSocio" behavior="readwrite" uniqueId="742f4461-179d-40c9-b69f-a6e3e460d90c" type="System.String">
+          <orm:column name="numeroSocio" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="activo" property="Activo" behavior="readwrite" uniqueId="d7349bce-2e44-4d12-9720-63aa7ecb35c6" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="club" property="Club" behavior="readwrite" uniqueId="925f0389-9142-4f89-ab0a-5985a3fd5c32" type="CapaDominio.Club">
+          <orm:reference uniqueId="91925995-bdf6-449d-8563-f146727d1240" association-name="JugadorHasClub">
             <orm:sharedfield name="idClub" target-class="CapaDominio.Club" target-field="idClub" />
-            <orm:constraint name="FK_Jugador_Club" delete-action="dbdefaultrule" destination-table="Club" />
+            <orm:constraint name="FK_Jugador_Club1" delete-action="dbdefaultrule" destination-table="Club" />
           </orm:reference>
         </orm:field>
       </orm:class>
@@ -72,9 +75,6 @@
         <orm:concurrency strategy="changed" />
         <orm:field name="idClub" property="IdClub" behavior="readwrite" uniqueId="e6347799-bdf4-47ea-b3eb-5d4315c34d1d" type="System.Int32">
           <orm:column name="idClub" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
-        </orm:field>
-        <orm:field name="nombre" property="Nombre" behavior="readwrite" uniqueId="db260620-86e3-4df4-833a-240a522b0be9" type="System.String">
-          <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
         <orm:field name="nombreInstitucional" property="NombreInstitucional" behavior="readwrite" uniqueId="13dec099-74d3-487e-b085-cf9b8e301a1b" type="System.String">
           <orm:column name="nombreInstitucional" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
@@ -91,11 +91,35 @@
         <orm:field name="idInterno" property="IdInterno" behavior="readwrite" uniqueId="558deb07-18fd-41a4-b05a-aa6c9357bf19" type="System.String">
           <orm:column name="idInterno" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="telefono" property="Telefono" behavior="readwrite" uniqueId="8288309c-acc3-4cef-89ea-6970f998fdd6" type="System.String">
-          <orm:column name="telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:field name="telefonoSede" property="TelefonoSede" behavior="readwrite" uniqueId="0ccfa39a-def4-4d9a-8a99-c21de54e2b68" type="System.String">
+          <orm:column name="telefonoSede" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="jugadors" property="Jugadors" behavior="readwrite" uniqueId="33985d8d-f016-48f9-bded-9598b207616e" type="CapaDominio.Jugador">
-          <orm:collection element-class="CapaDominio.Jugador" inverse-field="club" order-by="" uniqueId="f2a77c1f-87b4-4638-bee3-30d63b6a17a3" />
+        <orm:field name="telefonoCampoJuego" property="TelefonoCampoJuego" behavior="readwrite" uniqueId="1b6052a5-fdce-449c-b9dc-d006393c31f0" type="System.String">
+          <orm:column name="telefonoCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="numeroCuil" property="NumeroCuil" behavior="readwrite" uniqueId="90045cdd-dfb2-4ead-abef-0cef6c75f9e8" type="System.String">
+          <orm:column name="numeroCuil" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="emailCampoJuego" property="EmailCampoJuego" behavior="readwrite" uniqueId="1eb56ecd-8848-46d5-a4f6-ff3b526d654e" type="System.String">
+          <orm:column name="emailCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="emailAlternativo" property="EmailAlternativo" behavior="readwrite" uniqueId="74205626-bf45-4d3a-a475-ee7bd59a49c5" type="System.String">
+          <orm:column name="emailAlternativo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="domicilioSede" property="DomicilioSede" behavior="readwrite" uniqueId="fdc2d053-1a00-413a-80b9-d0c9f171023e" type="System.String">
+          <orm:column name="domicilioSede" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="domicilioCampoJuego" property="DomicilioCampoJuego" behavior="readwrite" uniqueId="1a8b651f-9061-4aaa-a5aa-b7398574bab1" type="System.String">
+          <orm:column name="domicilioCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="coloresOficiales" property="ColoresOficiales" behavior="readwrite" uniqueId="cbc1eac5-02ea-40dc-a97a-0aa954dea2c2" type="System.String">
+          <orm:column name="coloresOficiales" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="coloresAlternativos" property="ColoresAlternativos" behavior="readwrite" uniqueId="ffbb5ece-2704-41b2-812f-c1eefefa34c6" type="System.String">
+          <orm:column name="coloresAlternativos" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="jugadors" property="Jugadors" behavior="readwrite" uniqueId="46a46fb8-1e6e-4ecb-85f7-85978fde32cf" type="CapaDominio.Jugador">
+          <orm:collection element-class="CapaDominio.Jugador" inverse-field="club" order-by="" uniqueId="91925995-bdf6-449d-8563-f146727d1240" />
         </orm:field>
       </orm:class>
       <orm:class name="Usuario" uniqueId="125c1b93-1159-4822-ad2a-a317fb7dfa08">
@@ -128,7 +152,6 @@
         <orm:column name="tipo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="sector" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
-        <orm:column name="ficha" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="documento" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="celular" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
@@ -138,19 +161,28 @@
         <orm:column name="fechaNacMes" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
         <orm:column name="fechaNacDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="fechaNacAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
-        <orm:constraint name="FK_Jugador_Club" delete-action="dbdefaultrule" destination-table="Club">
+        <orm:column name="numeroSocio" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:constraint name="FK_Jugador_Club1" delete-action="dbdefaultrule" destination-table="Club">
           <orm:column name="idClub" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:constraint>
       </orm:table>
       <orm:table name="Club">
         <orm:column name="idClub" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
-        <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="nombreInstitucional" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="personeriaJuridica" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="anioAfiliacion" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="idInterno" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
-        <orm:column name="telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="telefonoSede" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="telefonoCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="numeroCuil" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="emailCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="emailAlternativo" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="domicilioSede" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="domicilioCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="coloresOficiales" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="coloresAlternativos" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
       </orm:table>
       <orm:table name="Usuario">
         <orm:column name="idUsuario" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
@@ -204,7 +236,6 @@
       <Property Id="62f53a1d-212f-4e04-9204-fb0853dfdc5d" name="Tipo" label="Tipo : String" kind="Persistent" fieldName="tipo" />
       <Property Id="a0b83b6f-45c4-4500-891b-0068c39bd0c4" name="Telefono" label="Telefono : String" kind="Persistent" fieldName="telefono" />
       <Property Id="f5a324af-b726-49c5-954a-1aa895010686" name="Sector" label="Sector : String" kind="Persistent" fieldName="sector" />
-      <Property Id="f30b1031-ec64-4655-a2c1-fce55b3b8ce1" name="Ficha" label="Ficha : String" kind="Persistent" fieldName="ficha" />
       <Property Id="f4fecbe4-94e8-4d9c-86cf-be424603bc67" name="Email" label="Email : String" kind="Persistent" fieldName="email" />
       <Property Id="1e0061ce-9820-432c-85ad-b2505be04bbb" name="Documento" label="Documento : String" kind="Persistent" fieldName="documento" />
       <Property Id="e90c910d-85dd-4afe-9e52-9626d918ba5b" name="Celular" label="Celular : String" kind="Persistent" fieldName="celular" />
@@ -214,24 +245,26 @@
       <Property Id="170813f0-49f2-4074-91f9-5315c8b32120" name="FechaNacMes" label="FechaNacMes : String" kind="Persistent" fieldName="fechaNacMes" />
       <Property Id="32a1a3dd-bf80-4853-83ee-5faa4f50434c" name="FechaNacDia" type="Int32" label="FechaNacDia : Int32" nullable="true" kind="Persistent" fieldName="fechaNacDia" />
       <Property Id="c91b4ee0-c17d-4cdd-a683-05a7035b6b5b" name="FechaNacAnio" type="Int32" label="FechaNacAnio : Int32" nullable="true" kind="Persistent" fieldName="fechaNacAnio" />
+      <Property Id="742f4461-179d-40c9-b69f-a6e3e460d90c" name="NumeroSocio" label="NumeroSocio : String" kind="Persistent" fieldName="numeroSocio" />
+      <Property Id="d7349bce-2e44-4d12-9720-63aa7ecb35c6" name="Activo" type="Boolean" label="Activo : Boolean" nullable="true" kind="Persistent" fieldName="activo" />
       <AssociationTargets>
-        <Association Id="f2a77c1f-87b4-4638-bee3-30d63b6a17a3" SourceMultiplicity="ZeroOne" name="JugadorHasClub">
+        <Association Id="91925995-bdf6-449d-8563-f146727d1240" SourceMultiplicity="ZeroOne" name="JugadorHasClub">
           <DomainClassMoniker name="/ModeloDeDominio/Club" />
           <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="4cae5218-095c-44f0-a236-86fddc4a03c0">
+            <associationDefinesTargetProperty Id="7e45a5c9-271b-49e1-9762-450b5d265a16">
               <NavigationalPropertyMoniker name="/ModeloDeDominio/Club/Jugadors" />
             </associationDefinesTargetProperty>
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="df71d1b6-3fcd-4a88-8d87-e0e8d045f615">
+            <associationDefinesSourceProperty Id="4b3793c1-9ddb-4b0d-8c2c-fbe1bed21981">
               <NavigationalPropertyMoniker name="/ModeloDeDominio/Jugador/Club" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="d8220235-9336-4890-bd45-4818cda43c60">
-          <NavigationalProperty Id="09d964e2-2518-42ca-a8fe-6928162ec1ce" name="Club" type="Club" label="Club : Club" nullable="true" kind="Persistent" fieldName="club" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="deb706f6-343b-4951-a5d3-cf4df5862acf">
+          <NavigationalProperty Id="925f0389-9142-4f89-ab0a-5985a3fd5c32" name="Club" type="Club" label="Club : Club" nullable="true" kind="Persistent" fieldName="club" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -240,13 +273,20 @@
       <Property Id="f6875eaf-6551-45df-8a4d-e9fc294b564a" name="AnioAfiliacion" label="AnioAfiliacion : String" kind="Persistent" fieldName="anioAfiliacion" />
       <Property Id="50aed12c-9132-447a-b144-40af074aed3f" name="Email" label="Email : String" kind="Persistent" fieldName="email" />
       <Property Id="558deb07-18fd-41a4-b05a-aa6c9357bf19" name="IdInterno" label="IdInterno : String" kind="Persistent" fieldName="idInterno" />
-      <Property Id="db260620-86e3-4df4-833a-240a522b0be9" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
       <Property Id="13dec099-74d3-487e-b085-cf9b8e301a1b" name="NombreInstitucional" label="NombreInstitucional : String" kind="Persistent" fieldName="nombreInstitucional" />
       <Property Id="ab90fa6b-6bba-4c0c-aa9a-0f390a1e6302" name="PersoneriaJuridica" label="PersoneriaJuridica : String" kind="Persistent" fieldName="personeriaJuridica" />
-      <Property Id="8288309c-acc3-4cef-89ea-6970f998fdd6" name="Telefono" label="Telefono : String" kind="Persistent" fieldName="telefono" />
+      <Property Id="0ccfa39a-def4-4d9a-8a99-c21de54e2b68" name="TelefonoSede" label="TelefonoSede : String" kind="Persistent" fieldName="telefonoSede" />
+      <Property Id="1b6052a5-fdce-449c-b9dc-d006393c31f0" name="TelefonoCampoJuego" label="TelefonoCampoJuego : String" kind="Persistent" fieldName="telefonoCampoJuego" />
+      <Property Id="90045cdd-dfb2-4ead-abef-0cef6c75f9e8" name="NumeroCuil" label="NumeroCuil : String" kind="Persistent" fieldName="numeroCuil" />
+      <Property Id="1eb56ecd-8848-46d5-a4f6-ff3b526d654e" name="EmailCampoJuego" label="EmailCampoJuego : String" kind="Persistent" fieldName="emailCampoJuego" />
+      <Property Id="74205626-bf45-4d3a-a475-ee7bd59a49c5" name="EmailAlternativo" label="EmailAlternativo : String" kind="Persistent" fieldName="emailAlternativo" />
+      <Property Id="fdc2d053-1a00-413a-80b9-d0c9f171023e" name="DomicilioSede" label="DomicilioSede : String" kind="Persistent" fieldName="domicilioSede" />
+      <Property Id="1a8b651f-9061-4aaa-a5aa-b7398574bab1" name="DomicilioCampoJuego" label="DomicilioCampoJuego : String" kind="Persistent" fieldName="domicilioCampoJuego" />
+      <Property Id="cbc1eac5-02ea-40dc-a97a-0aa954dea2c2" name="ColoresOficiales" label="ColoresOficiales : String" kind="Persistent" fieldName="coloresOficiales" />
+      <Property Id="ffbb5ece-2704-41b2-812f-c1eefefa34c6" name="ColoresAlternativos" label="ColoresAlternativos : String" kind="Persistent" fieldName="coloresAlternativos" />
       <navigationalProperties>
-        <classHasNavigationalProperties Id="27552d45-ab7a-4f97-804c-bb91e45da873">
-          <NavigationalProperty Id="33985d8d-f016-48f9-bded-9598b207616e" name="Jugadors" type="IList&lt;Jugador&gt;" label="Jugadors : IList&lt;Jugador&gt;" nullable="true" kind="Persistent" fieldName="jugadors" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="c3e2ed65-633b-45fc-9081-cfd28fdac382">
+          <NavigationalProperty Id="46a46fb8-1e6e-4ecb-85f7-85978fde32cf" name="Jugadors" type="IList&lt;Jugador&gt;" label="Jugadors : IList&lt;Jugador&gt;" nullable="true" kind="Persistent" fieldName="jugadors" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>

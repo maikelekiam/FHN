@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClubRepo.cs" />
     <Compile Include="JugadorRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuariRepo.cs" />

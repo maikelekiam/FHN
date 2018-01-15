@@ -37,19 +37,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private string nombre;
-		public virtual string Nombre
-		{
-			get
-			{
-				return this.nombre;
-			}
-			set
-			{
-				this.nombre = value;
-			}
-		}
-		
 		private string nombreInstitucional;
 		public virtual string NombreInstitucional
 		{
@@ -115,16 +102,120 @@ namespace CapaDominio
 			}
 		}
 		
-		private string telefono;
-		public virtual string Telefono
+		private string telefonoSede;
+		public virtual string TelefonoSede
 		{
 			get
 			{
-				return this.telefono;
+				return this.telefonoSede;
 			}
 			set
 			{
-				this.telefono = value;
+				this.telefonoSede = value;
+			}
+		}
+		
+		private string telefonoCampoJuego;
+		public virtual string TelefonoCampoJuego
+		{
+			get
+			{
+				return this.telefonoCampoJuego;
+			}
+			set
+			{
+				this.telefonoCampoJuego = value;
+			}
+		}
+		
+		private string numeroCuil;
+		public virtual string NumeroCuil
+		{
+			get
+			{
+				return this.numeroCuil;
+			}
+			set
+			{
+				this.numeroCuil = value;
+			}
+		}
+		
+		private string emailCampoJuego;
+		public virtual string EmailCampoJuego
+		{
+			get
+			{
+				return this.emailCampoJuego;
+			}
+			set
+			{
+				this.emailCampoJuego = value;
+			}
+		}
+		
+		private string emailAlternativo;
+		public virtual string EmailAlternativo
+		{
+			get
+			{
+				return this.emailAlternativo;
+			}
+			set
+			{
+				this.emailAlternativo = value;
+			}
+		}
+		
+		private string domicilioSede;
+		public virtual string DomicilioSede
+		{
+			get
+			{
+				return this.domicilioSede;
+			}
+			set
+			{
+				this.domicilioSede = value;
+			}
+		}
+		
+		private string domicilioCampoJuego;
+		public virtual string DomicilioCampoJuego
+		{
+			get
+			{
+				return this.domicilioCampoJuego;
+			}
+			set
+			{
+				this.domicilioCampoJuego = value;
+			}
+		}
+		
+		private string coloresOficiales;
+		public virtual string ColoresOficiales
+		{
+			get
+			{
+				return this.coloresOficiales;
+			}
+			set
+			{
+				this.coloresOficiales = value;
+			}
+		}
+		
+		private string coloresAlternativos;
+		public virtual string ColoresAlternativos
+		{
+			get
+			{
+				return this.coloresAlternativos;
+			}
+			set
+			{
+				this.coloresAlternativos = value;
 			}
 		}
 		
