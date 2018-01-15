@@ -42,7 +42,7 @@
                             <li><a runat="server" href="~/AltaClub.aspx">Alta de Club</a></li>
                             <li><a runat="server" href="~/EditarClub.aspx">Editar Club</a></li>
                             <li class="divider"></li>
-                            <li><a runat="server" href="~/ListarClubesActivos.aspx">Lista de Clubes Activos</a></li>
+                            <li><a runat="server" href="~/ListarClubes.aspx">Lista de Clubes</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

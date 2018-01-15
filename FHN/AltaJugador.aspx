@@ -120,7 +120,7 @@
                         ForeColor="#000066"
                         CssClass="selectpicker form-control show-tick"
                         data-live-search="true"
-                        DataTextField="nombre"
+                        DataTextField="nombreInstitucional"
                         AutoPostBack="False"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione Club&gt;</asp:ListItem>

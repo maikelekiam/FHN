@@ -180,6 +180,7 @@
     <Content Include="js\jquery-1.12.3.js" />
     <Content Include="js\panel-collapsible.js" />
     <Content Include="js\select2.js" />
+    <Content Include="ListarClubes.aspx" />
     <Content Include="ListarJugadores.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListarClubes.aspx.cs">
+      <DependentUpon>ListarClubes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarClubes.aspx.designer.cs">
+      <DependentUpon>ListarClubes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarJugadores.aspx.cs">
       <DependentUpon>ListarJugadores.aspx</DependentUpon>

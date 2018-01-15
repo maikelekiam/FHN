@@ -14,29 +14,29 @@ namespace FHN
     {
         IEnumerable<Jugador> datos;
         JugadorNego jugadorNego = new JugadorNego();
+        ClubNego clubNego = new ClubNego();
         
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 CargarListaJugadores();
+                CargarListaClubes();
             }
-        }
-
-        protected void ddlActualizarJugador_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lblIdJugador.Text = ddlActualizarJugador.SelectedValue.ToString();
-            CargarJugador(Convert.ToInt32(lblIdJugador.Text));
         }
 
         private void CargarListaJugadores()
         {
             IList<Jugador> nombreCompleto = jugadorNego.ListarJugadores().Select(j => new Jugador() { Nombre = "(" + j.IdJugador + ") " + j.Nombre + " " + j.Apellido, IdJugador = j.IdJugador }).OrderBy(c => c.IdJugador).ToList();
 
-            ddlActualizarJugador.DataSource = nombreCompleto;
-            //ddlActualizarPersona.DataTextField = "nombre_completo";
-            ddlActualizarJugador.DataValueField = "idJugador";
-            ddlActualizarJugador.DataBind();
+            ddlJugador.DataSource = nombreCompleto;
+            ddlJugador.DataValueField = "idJugador";
+            ddlJugador.DataBind();
+        }
+        private void CargarListaClubes()
+        {
+            ddlClub.DataSource = clubNego.ListarClubes().ToList();
+            ddlClub.DataBind();
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -70,6 +70,12 @@ namespace FHN
 
 
 
+        }
+
+        protected void ddlJugador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblIdJugador.Text = ddlJugador.SelectedValue.ToString();
+            CargarJugador(Convert.ToInt32(lblIdJugador.Text));
         }
     }
 }

@@ -20,6 +20,7 @@ namespace FHN
         protected void btnGuardarClub_Click(object sender, EventArgs e)
         {
             GuardarClub();
+            Response.Redirect("ListarClubes.aspx");
         }
         private void GuardarClub()
         {
