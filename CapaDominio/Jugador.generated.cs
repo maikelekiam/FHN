@@ -102,19 +102,6 @@ namespace CapaDominio
 			}
 		}
 		
-		private DateTime? fechaNacimiento;
-		public virtual DateTime? FechaNacimiento
-		{
-			get
-			{
-				return this.fechaNacimiento;
-			}
-			set
-			{
-				this.fechaNacimiento = value;
-			}
-		}
-		
 		private string email;
 		public virtual string Email
 		{
@@ -190,6 +177,45 @@ namespace CapaDominio
 			set
 			{
 				this.domicilio = value;
+			}
+		}
+		
+		private string fechaNacMes;
+		public virtual string FechaNacMes
+		{
+			get
+			{
+				return this.fechaNacMes;
+			}
+			set
+			{
+				this.fechaNacMes = value;
+			}
+		}
+		
+		private int? fechaNacDia;
+		public virtual int? FechaNacDia
+		{
+			get
+			{
+				return this.fechaNacDia;
+			}
+			set
+			{
+				this.fechaNacDia = value;
+			}
+		}
+		
+		private int? fechaNacAnio;
+		public virtual int? FechaNacAnio
+		{
+			get
+			{
+				return this.fechaNacAnio;
+			}
+			set
+			{
+				this.fechaNacAnio = value;
 			}
 		}
 		

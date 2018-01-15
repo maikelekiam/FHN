@@ -6,89 +6,73 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FHN</title>
+    <title>Sistema Informatico para FHN</title>
+
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
     <link href="css/bootstrap-select.css" rel="stylesheet" />
-
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
-    <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
 </head>
+
+
 <body>
     <form runat="server" class="form-horizontal form-control">
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager EnablePageMethods="true" runat="server">
+            <Scripts>
+            </Scripts>
         </asp:ScriptManager>
-
-        <!-- MENU -->
-        <div class="navbar navbar-default">
-            <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" runat="server" href="~/Default.aspx">
-                        <h2>Sistema FHN</h2>
-                    </a>
+                    <a class="navbar-brand" href="/Default.aspx">Sistema FHN</a>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center">
-                            <div class="btn-group">
-                                <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">JUGADORES <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/AltaJugador.aspx">Alta de Jugador</a></li>
-                                    <li><a runat="server" href="~/EditarJugador.aspx">Editar Jugador</a></li>
-                                    <li class="divider"></li>
-                                    <li><a runat="server" href="~/ListarJugadores.aspx">Lista de Jugadores</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">CLUBES<span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/AltaClub.aspx">Alta de Club</a></li>
-                                    <li><a runat="server" href="~/EditarClub.aspx">Editar Club</a></li>
-                                    <li class="divider"></li>
-                                    <li><a runat="server" href="~/ListarClubesActivos.aspx">Lista de Clubes Activos</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">CUOTAS<span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/AltaCuota.aspx">Alta de Cuota</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PAGOS<span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/AltaPago.aspx">Ingresar Pago</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">PLANIFICACION <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a runat="server" href="~/Temporada.aspx">Temporada</a></li>
-                                    <li class="divider"></li>
-                                    <li><a runat="server" href="~/Torneo.aspx">Torneo</a></li>
-                                    <li class="divider"></li>
-                                    <li><a runat="server" href="~/Division.aspx">Division</a></li>
-                                </ul>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/Default.aspx">Inicio</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">JUGADORES <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a runat="server" href="~/AltaJugador.aspx">Alta de Jugador</a></li>
+                            <li><a runat="server" href="~/EditarJugador.aspx">Editar Jugador</a></li>
+                            <li class="divider"></li>
+                            <li><a runat="server" href="~/ListarJugadores.aspx">Lista de Jugadores</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">CLUBES <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a runat="server" href="~/AltaClub.aspx">Alta de Club</a></li>
+                            <li><a runat="server" href="~/EditarClub.aspx">Editar Club</a></li>
+                            <li class="divider"></li>
+                            <li><a runat="server" href="~/ListarClubesActivos.aspx">Lista de Clubes Activos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">CUOTAS <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a runat="server" href="~/AltaCuota.aspx">Alta de Cuota</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">PAGOS <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a runat="server" href="~/AltaPago.aspx">Ingresar Pago</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">PLANIFICACION <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a runat="server" href="~/Temporada.aspx">Temporada</a></li>
+                            <li class="divider"></li>
+                            <li><a runat="server" href="~/Torneo.aspx">Torneo</a></li>
+                            <li class="divider"></li>
+                            <li><a runat="server" href="~/Division.aspx">Division</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="btn" href="/Login.aspx">SALIR <span class="glyphicon glyphicon-log-out"></span></a></li>
+                </ul>
             </div>
-        </div>
+        </nav>
 
         <!--BODY-->
         <div class="container body-content">

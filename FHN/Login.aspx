@@ -24,7 +24,7 @@
                         <br />
                         <div class="form-group">
                             <div class="col-md-12 col-md-offset-2">
-                                <h2>Sistema CyT</h2>
+                                <h2>Sistema FHN</h2>
                             </div>
                         </div>
                         <div class="form-group">

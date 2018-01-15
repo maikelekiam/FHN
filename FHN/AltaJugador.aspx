@@ -2,19 +2,22 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <asp:Panel ID="Panel1" runat="server">
+        <asp:Panel ID="Panel1" CssClass="panel panel-default" runat="server">
             <div class="panel-heading">
-                <h2>Formulario de ALTA Jugador</h2>
+                <h3>Formulario de ALTA Jugador</h3>
             </div>
 
             <!--NOMBRE + APELLIDO-->
+            <br />
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
+            </div>
+            <div class="form-group">
                 <asp:Label ID="lblApellido" runat="server" Text="APELLIDO" CssClass="col-md-2 control-label"> </asp:Label>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
@@ -33,6 +36,8 @@
                         <asp:ListItem Value="CI">CI</asp:ListItem>
                     </asp:DropDownList>
                 </div>
+            </div>
+            <div class="form-group">
                 <asp:Label ID="lblDocumento" runat="server" Text="DOCUMENTO" class="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
                     <asp:TextBox ID="txtDocumento" runat="server" class="form-control"></asp:TextBox>
@@ -42,20 +47,21 @@
             <!--FECHA NACIMIENTO-->
             <div class="form-group">
                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="FECHA DE NACIMIENTO" CssClass="col-md-2 control-label"></asp:Label>
-                <div class="col-md-3">
-                    <div class="input-group date"
-                        data-provide="datepicker"
-                        data-date-format="dd/mm/yyyy"
-                        data-date-autoclose="true"
-                        data-date-today-btn="true"
-                        data-date-clear-btn="true"
-                        data-date-today-highlight="true">
-                        <asp:TextBox CssClass="form-control" runat="server" ID="txtFechaNacimiento"></asp:TextBox>
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
-                </div>
+                <asp:DropDownList ID="ddlDia" runat="server"
+                    CssClass="selectpicker form-control show-tick"
+                    data-live-search="false"
+                    data-width="70">
+                </asp:DropDownList>
+                <asp:DropDownList ID="ddlMes" runat="server"
+                    CssClass="selectpicker form-control show-tick"
+                    data-live-search="false"
+                    data-width="150">
+                </asp:DropDownList>
+                <asp:DropDownList ID="ddlAnio" runat="server"
+                    CssClass="selectpicker form-control show-tick"
+                    data-live-search="false"
+                    data-width="100">
+                </asp:DropDownList>
             </div>
 
             <!--TELEFONO + CELULAR-->
@@ -64,6 +70,8 @@
                 <div class="col-md-4">
                     <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
+            </div>
+            <div class="form-group">
                 <asp:Label ID="lblCelular" runat="server" Text="CELULAR" CssClass="col-md-2 control-label"> </asp:Label>
                 <div class="col-md-4">
                     <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control"></asp:TextBox>
@@ -72,10 +80,12 @@
 
             <!--FICHA + SECTOR-->
             <div class="form-group">
-                <asp:Label ID="lblFicha" runat="server" Text="FICHA" CssClass="col-md-2 control-label"></asp:Label>
+                <asp:Label ID="lblFicha" runat="server" Text="N°SOCIO" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
                     <asp:TextBox ID="txtFicha" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
+            </div>
+            <div class="form-group">
                 <asp:Label ID="lblSector" runat="server" Text="SECTOR" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-4">
                     <asp:DropDownList ID="ddlSector" runat="server"

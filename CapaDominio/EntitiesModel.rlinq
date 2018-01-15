@@ -27,9 +27,6 @@
         <orm:field name="ficha" property="Ficha" behavior="readwrite" uniqueId="f30b1031-ec64-4655-a2c1-fce55b3b8ce1" type="System.String">
           <orm:column name="ficha" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="fechaNacimiento" property="FechaNacimiento" behavior="readwrite" uniqueId="022007ff-954a-4e19-af18-b46264cfaa9c" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
-          <orm:column name="fechaNacimiento" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
-        </orm:field>
         <orm:field name="email" property="Email" behavior="readwrite" uniqueId="f4fecbe4-94e8-4d9c-86cf-be424603bc67" type="System.String">
           <orm:column name="email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
@@ -47,6 +44,15 @@
         </orm:field>
         <orm:field name="domicilio" property="Domicilio" behavior="readwrite" uniqueId="20e61025-d1d0-4aee-8787-f453e85c5e0f" type="System.String">
           <orm:column name="domicilio" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="fechaNacMes" property="FechaNacMes" behavior="readwrite" uniqueId="170813f0-49f2-4074-91f9-5315c8b32120" type="System.String">
+          <orm:column name="fechaNacMes" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        </orm:field>
+        <orm:field name="fechaNacDia" property="FechaNacDia" behavior="readwrite" uniqueId="32a1a3dd-bf80-4853-83ee-5faa4f50434c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaNacDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="fechaNacAnio" property="FechaNacAnio" behavior="readwrite" uniqueId="c91b4ee0-c17d-4cdd-a683-05a7035b6b5b" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaNacAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:field>
         <orm:field name="club" property="Club" behavior="readwrite" uniqueId="09d964e2-2518-42ca-a8fe-6928162ec1ce" type="CapaDominio.Club">
           <orm:reference uniqueId="f2a77c1f-87b4-4638-bee3-30d63b6a17a3" association-name="JugadorHasClub">
@@ -123,13 +129,15 @@
         <orm:column name="telefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="sector" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="ficha" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
-        <orm:column name="fechaNacimiento" sql-type="datetime" nullable="true" length="0" scale="0" ado-type="DateTime" />
         <orm:column name="email" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="documento" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="celular" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="apellido" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="idClub" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="domicilio" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="fechaNacMes" sql-type="varchar" nullable="true" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:column name="fechaNacDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="fechaNacAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:constraint name="FK_Jugador_Club" delete-action="dbdefaultrule" destination-table="Club">
           <orm:column name="idClub" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:constraint>
@@ -197,13 +205,15 @@
       <Property Id="a0b83b6f-45c4-4500-891b-0068c39bd0c4" name="Telefono" label="Telefono : String" kind="Persistent" fieldName="telefono" />
       <Property Id="f5a324af-b726-49c5-954a-1aa895010686" name="Sector" label="Sector : String" kind="Persistent" fieldName="sector" />
       <Property Id="f30b1031-ec64-4655-a2c1-fce55b3b8ce1" name="Ficha" label="Ficha : String" kind="Persistent" fieldName="ficha" />
-      <Property Id="022007ff-954a-4e19-af18-b46264cfaa9c" name="FechaNacimiento" type="DateTime" label="FechaNacimiento : DateTime" nullable="true" kind="Persistent" fieldName="fechaNacimiento" />
       <Property Id="f4fecbe4-94e8-4d9c-86cf-be424603bc67" name="Email" label="Email : String" kind="Persistent" fieldName="email" />
       <Property Id="1e0061ce-9820-432c-85ad-b2505be04bbb" name="Documento" label="Documento : String" kind="Persistent" fieldName="documento" />
       <Property Id="e90c910d-85dd-4afe-9e52-9626d918ba5b" name="Celular" label="Celular : String" kind="Persistent" fieldName="celular" />
       <Property Id="b0ad5772-7a6f-4796-b6f4-b28062960028" name="Apellido" label="Apellido : String" kind="Persistent" fieldName="apellido" />
       <Property Id="7d16b383-15eb-41a3-b699-2b0ad799f0ce" name="IdClub" type="Int32" label="IdClub : Int32" nullable="true" kind="Persistent" fieldName="idClub" />
       <Property Id="20e61025-d1d0-4aee-8787-f453e85c5e0f" name="Domicilio" label="Domicilio : String" kind="Persistent" fieldName="domicilio" />
+      <Property Id="170813f0-49f2-4074-91f9-5315c8b32120" name="FechaNacMes" label="FechaNacMes : String" kind="Persistent" fieldName="fechaNacMes" />
+      <Property Id="32a1a3dd-bf80-4853-83ee-5faa4f50434c" name="FechaNacDia" type="Int32" label="FechaNacDia : Int32" nullable="true" kind="Persistent" fieldName="fechaNacDia" />
+      <Property Id="c91b4ee0-c17d-4cdd-a683-05a7035b6b5b" name="FechaNacAnio" type="Int32" label="FechaNacAnio : Int32" nullable="true" kind="Persistent" fieldName="fechaNacAnio" />
       <AssociationTargets>
         <Association Id="f2a77c1f-87b4-4638-bee3-30d63b6a17a3" SourceMultiplicity="ZeroOne" name="JugadorHasClub">
           <DomainClassMoniker name="/ModeloDeDominio/Club" />
