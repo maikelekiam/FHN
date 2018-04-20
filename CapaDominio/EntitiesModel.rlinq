@@ -57,11 +57,23 @@
         <orm:field name="activo" property="Activo" behavior="readwrite" uniqueId="d7349bce-2e44-4d12-9720-63aa7ecb35c6" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
           <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
         </orm:field>
-        <orm:field name="club" property="Club" behavior="readwrite" uniqueId="925f0389-9142-4f89-ab0a-5985a3fd5c32" type="CapaDominio.Club">
-          <orm:reference uniqueId="91925995-bdf6-449d-8563-f146727d1240" association-name="JugadorHasClub">
+        <orm:field name="contactoTelefono" property="ContactoTelefono" behavior="readwrite" uniqueId="727c1943-a7a8-45cb-a949-c9315d69aff6" type="System.String">
+          <orm:column name="contactoTelefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactoParentezco" property="ContactoParentezco" behavior="readwrite" uniqueId="abe8eccc-07af-4787-a5b8-604ec56e9a07" type="System.String">
+          <orm:column name="contactoParentezco" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="contactoNombre" property="ContactoNombre" behavior="readwrite" uniqueId="59845322-7021-4c4d-b467-6903e5586376" type="System.String">
+          <orm:column name="contactoNombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="club" property="Club" behavior="readwrite" uniqueId="a34f71b4-2173-4541-a482-d66ccc8d2554" type="CapaDominio.Club">
+          <orm:reference uniqueId="fa6e8090-d582-4312-bdab-4abd17ebb3dc" association-name="JugadorHasClub">
             <orm:sharedfield name="idClub" target-class="CapaDominio.Club" target-field="idClub" />
-            <orm:constraint name="FK_Jugador_Club1" delete-action="dbdefaultrule" destination-table="Club" />
+            <orm:constraint name="FK_Jugador_Club" delete-action="dbdefaultrule" destination-table="Club" />
           </orm:reference>
+        </orm:field>
+        <orm:field name="pagoJugadors" property="PagoJugadors" behavior="readwrite" uniqueId="262187dc-d6c0-41e6-96b7-771b4cf62961" type="CapaDominio.PagoJugador">
+          <orm:collection element-class="CapaDominio.PagoJugador" inverse-field="jugador" order-by="" uniqueId="18ed1628-3927-45ad-bf18-1d3383d301e0" />
         </orm:field>
       </orm:class>
       <orm:class name="Club" uniqueId="d3df6376-0b7e-48ee-a13b-687a61674fba">
@@ -118,8 +130,11 @@
         <orm:field name="coloresAlternativos" property="ColoresAlternativos" behavior="readwrite" uniqueId="ffbb5ece-2704-41b2-812f-c1eefefa34c6" type="System.String">
           <orm:column name="coloresAlternativos" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="jugadors" property="Jugadors" behavior="readwrite" uniqueId="46a46fb8-1e6e-4ecb-85f7-85978fde32cf" type="CapaDominio.Jugador">
-          <orm:collection element-class="CapaDominio.Jugador" inverse-field="club" order-by="" uniqueId="91925995-bdf6-449d-8563-f146727d1240" />
+        <orm:field name="nombreCorto" property="NombreCorto" behavior="readwrite" uniqueId="d08bf01a-8d47-439d-b5e0-6233d55f12e9" type="System.String">
+          <orm:column name="nombreCorto" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="jugadors" property="Jugadors" behavior="readwrite" uniqueId="d9071149-7182-423d-94af-4771337438a6" type="CapaDominio.Jugador">
+          <orm:collection element-class="CapaDominio.Jugador" inverse-field="club" order-by="" uniqueId="fa6e8090-d582-4312-bdab-4abd17ebb3dc" />
         </orm:field>
       </orm:class>
       <orm:class name="Usuario" uniqueId="125c1b93-1159-4822-ad2a-a317fb7dfa08">
@@ -134,14 +149,121 @@
         <orm:field name="idUsuario" property="IdUsuario" behavior="readwrite" uniqueId="18c8bbeb-b23c-4695-9e5b-441d77722ec6" type="System.Int32">
           <orm:column name="idUsuario" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
         </orm:field>
-        <orm:field name="usuario1" property="Usuario1" behavior="readwrite" uniqueId="ade29bec-5d5e-415f-9ac8-9bdccbf0b1fb" type="System.String">
-          <orm:column name="usuario" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:field name="nombre" property="Nombre" behavior="readwrite" uniqueId="090da7e5-5673-4dbb-ba0a-75d4d1883caf" type="System.String">
+          <orm:column name="nombre" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="password" property="Password" behavior="readwrite" uniqueId="75b2ea7b-7bd3-4a47-b2d1-c068ffedc7b0" type="System.String">
-          <orm:column name="password" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
+        <orm:field name="mail" property="Mail" behavior="readwrite" uniqueId="43184390-0baf-46e6-8a7a-75deff299825" type="System.String">
+          <orm:column name="mail" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         </orm:field>
-        <orm:field name="nivel" property="Nivel" behavior="readwrite" uniqueId="a6d2dc47-e51b-4738-be6e-4312a2d7bf5b" type="System.Int32">
-          <orm:column name="nivel" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:field name="grupo" property="Grupo" behavior="readwrite" uniqueId="324a530e-06d3-4583-b97f-88a6bdddfd91" type="System.Int32">
+          <orm:column name="grupo" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="contrasenia" property="Contrasenia" behavior="readwrite" uniqueId="40ab3d84-f234-488a-82a6-258d351102e3" type="System.String">
+          <orm:column name="contrasenia" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="PagoJugador" uniqueId="5a82f0ff-6983-406a-8faf-574d905c665c">
+        <orm:table name="PagoJugador" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="IdPagoJugador" />
+          </orm:key-generator>
+          <orm:single-field field-name="idPagoJugador" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="idPagoJugador" property="IdPagoJugador" behavior="readwrite" uniqueId="d69a4f20-015e-4205-9f33-0bd2ad6c69c1" type="System.Int32">
+          <orm:column name="idPagoJugador" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="nombre" property="Nombre" behavior="readwrite" uniqueId="12ad36e0-84d0-40cf-978c-1cc7a3806eaa" type="System.String">
+          <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="idCuotaJugador" property="IdCuotaJugador" behavior="readwrite" uniqueId="7c12096d-09dd-473e-b0d1-9ce2b60e43b8" type="System.Int32">
+          <orm:column name="idCuotaJugador" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="idJugador" property="IdJugador" behavior="readwrite" uniqueId="f3984fcf-bfd1-4069-9c58-44b6bdcaa6c3" type="System.Int32">
+          <orm:column name="idJugador" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="monto" property="Monto" behavior="readwrite" uniqueId="fbb132ed-b490-4b45-b939-04a9091a8795" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="monto" sql-type="numeric" nullable="true" length="18" scale="2" ado-type="Numeric" />
+        </orm:field>
+        <orm:field name="detalle" property="Detalle" behavior="readwrite" uniqueId="e268c655-9a0a-4221-b5e1-d8e736213d95" type="System.String">
+          <orm:column name="detalle" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="observaciones" property="Observaciones" behavior="readwrite" uniqueId="233d1c19-59a1-4b41-b346-54c80bbd8f4f" type="System.String">
+          <orm:column name="observaciones" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="fechaPagoMes" property="FechaPagoMes" behavior="readwrite" uniqueId="b8687b42-3cff-4c9f-95b8-889a6d5f50c5" type="System.String">
+          <orm:column name="fechaPagoMes" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="fechaPagoDia" property="FechaPagoDia" behavior="readwrite" uniqueId="ea803ecf-85d1-4edd-8d6b-9c14cd2e1845" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaPagoDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="fechaPagoAnio" property="FechaPagoAnio" behavior="readwrite" uniqueId="0eed7800-eec4-437e-942c-207c62db4fb8" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaPagoAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="porcentajeDescuento" property="PorcentajeDescuento" behavior="readwrite" uniqueId="8b5ff6f2-4cad-4939-a64b-f57e73390041" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="porcentajeDescuento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="fechaPago" property="FechaPago" behavior="readwrite" uniqueId="91bb549b-09ad-4476-803b-e0f774aaf41f" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaPago" sql-type="date" nullable="true" length="0" scale="0" ado-type="Date" />
+        </orm:field>
+        <orm:field name="descuento" property="Descuento" behavior="readwrite" uniqueId="11a51fcb-b5d3-455e-8db2-1feb3ba74c35" type="System.Nullable`1[[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="descuento" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        </orm:field>
+        <orm:field name="jugador" property="Jugador" behavior="readwrite" uniqueId="a5514939-dc6c-4bf0-bbd8-329d0a82f400" type="CapaDominio.Jugador">
+          <orm:reference uniqueId="18ed1628-3927-45ad-bf18-1d3383d301e0" association-name="PagoJugadorHasJugador">
+            <orm:sharedfield name="idJugador" target-class="CapaDominio.Jugador" target-field="idJugador" />
+            <orm:constraint name="FK_PagoJugador_Jugador" delete-action="dbdefaultrule" destination-table="Jugador" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="cuotaJugador" property="CuotaJugador" behavior="readwrite" uniqueId="dae737b6-a316-47be-8d48-29b83c33db85" type="CapaDominio.CuotaJugador">
+          <orm:reference uniqueId="2c58e9ff-d844-41fa-a560-a3c7705f6626" association-name="PagoJugadorHasCuotaJugador">
+            <orm:sharedfield name="idCuotaJugador" target-class="CapaDominio.CuotaJugador" target-field="idCuotaJugador" />
+            <orm:constraint name="FK_PagoJugador_CuotaJugador" delete-action="dbdefaultrule" destination-table="CuotaJugador" />
+          </orm:reference>
+        </orm:field>
+      </orm:class>
+      <orm:class name="CuotaJugador" uniqueId="d681ead8-2c76-4af9-81e1-fba26a818cfa">
+        <orm:table name="CuotaJugador" />
+        <orm:identity>
+          <orm:key-generator name="autoinc">
+            <orm:key-generator-member property-name="IdCuotaJugador" />
+          </orm:key-generator>
+          <orm:single-field field-name="idCuotaJugador" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="idCuotaJugador" property="IdCuotaJugador" behavior="readwrite" uniqueId="a2bf7e26-ca05-4b0e-8793-6ee9dd7c94ac" type="System.Int32">
+          <orm:column name="idCuotaJugador" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="nombre" property="Nombre" behavior="readwrite" uniqueId="f21472a9-5ed7-4a97-967c-f852a605eb5b" type="System.String">
+          <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="monto" property="Monto" behavior="readwrite" uniqueId="76c3c46b-38f5-4731-93cb-995023ac88f7" type="System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="monto" sql-type="numeric" nullable="true" length="18" scale="2" ado-type="Numeric" />
+        </orm:field>
+        <orm:field name="detalle" property="Detalle" behavior="readwrite" uniqueId="648d0ded-4919-4209-ad86-cdbc38bf7ca5" type="System.String">
+          <orm:column name="detalle" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="observaciones" property="Observaciones" behavior="readwrite" uniqueId="6ecceffe-def0-45e5-ae02-77544d82fbc7" type="System.String">
+          <orm:column name="observaciones" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="fechaVencimientoMes" property="FechaVencimientoMes" behavior="readwrite" uniqueId="247e4778-5244-48b8-a9c3-73fd92eaec46" type="System.String">
+          <orm:column name="fechaVencimientoMes" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        </orm:field>
+        <orm:field name="fechaVencimientoDia" property="FechaVencimientoDia" behavior="readwrite" uniqueId="4c8366a1-c86e-46a7-8b0f-569bac22a2c5" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaVencimientoDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="fechaVencimientoAnio" property="FechaVencimientoAnio" behavior="readwrite" uniqueId="6d59ec40-da1f-4265-bc1b-0f24a690635c" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaVencimientoAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="anio" property="Anio" behavior="readwrite" uniqueId="48f34593-76dc-4100-980c-7f21c5b6616a" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="anio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="fechaVencimiento" property="FechaVencimiento" behavior="readwrite" uniqueId="f07e4e5e-0d55-44a6-913c-bd842159933d" type="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="fechaVencimiento" sql-type="date" nullable="true" length="0" scale="0" ado-type="Date" />
+        </orm:field>
+        <orm:field name="pagoJugadors" property="PagoJugadors" behavior="readwrite" uniqueId="462814eb-8795-4e7f-8470-c5cf152576d5" type="CapaDominio.PagoJugador">
+          <orm:collection element-class="CapaDominio.PagoJugador" inverse-field="cuotaJugador" order-by="" uniqueId="2c58e9ff-d844-41fa-a560-a3c7705f6626" />
         </orm:field>
       </orm:class>
     </orm:namespace>
@@ -163,7 +285,10 @@
         <orm:column name="fechaNacAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         <orm:column name="numeroSocio" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="activo" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
-        <orm:constraint name="FK_Jugador_Club1" delete-action="dbdefaultrule" destination-table="Club">
+        <orm:column name="contactoTelefono" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="contactoParentezco" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="contactoNombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:constraint name="FK_Jugador_Club" delete-action="dbdefaultrule" destination-table="Club">
           <orm:column name="idClub" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
         </orm:constraint>
       </orm:table>
@@ -183,12 +308,47 @@
         <orm:column name="domicilioCampoJuego" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="coloresOficiales" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
         <orm:column name="coloresAlternativos" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="nombreCorto" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
       </orm:table>
       <orm:table name="Usuario">
         <orm:column name="idUsuario" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
-        <orm:column name="usuario" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="password" sql-type="varchar" nullable="false" length="50" scale="0" ado-type="StringVariableLength" />
-        <orm:column name="nivel" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="nombre" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="mail" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="grupo" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="contrasenia" sql-type="varchar(max)" nullable="false" length="0" scale="0" ado-type="StringInfiniteLength" />
+      </orm:table>
+      <orm:table name="PagoJugador">
+        <orm:column name="idPagoJugador" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="idCuotaJugador" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="idJugador" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="monto" sql-type="numeric" nullable="true" length="18" scale="2" ado-type="Numeric" />
+        <orm:column name="detalle" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="observaciones" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="fechaPagoMes" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="fechaPagoDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="fechaPagoAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="porcentajeDescuento" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="fechaPago" sql-type="date" nullable="true" length="0" scale="0" ado-type="Date" />
+        <orm:column name="descuento" sql-type="bit" nullable="true" length="0" scale="0" ado-type="Bit" />
+        <orm:constraint name="FK_PagoJugador_Jugador" delete-action="dbdefaultrule" destination-table="Jugador">
+          <orm:column name="idJugador" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="FK_PagoJugador_CuotaJugador" delete-action="dbdefaultrule" destination-table="CuotaJugador">
+          <orm:column name="idCuotaJugador" sql-type="int" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="CuotaJugador">
+        <orm:column name="idCuotaJugador" sql-type="int" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="nombre" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="monto" sql-type="numeric" nullable="true" length="18" scale="2" ado-type="Numeric" />
+        <orm:column name="detalle" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="observaciones" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="fechaVencimientoMes" sql-type="varchar(max)" nullable="true" length="0" scale="0" ado-type="StringInfiniteLength" />
+        <orm:column name="fechaVencimientoDia" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="fechaVencimientoAnio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="anio" sql-type="int" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="fechaVencimiento" sql-type="date" nullable="true" length="0" scale="0" ado-type="Date" />
       </orm:table>
       <orm:procedure name="fn_diagramobjects" is-function="true" return-type="int">
         <orm:result-sets />
@@ -247,24 +407,30 @@
       <Property Id="c91b4ee0-c17d-4cdd-a683-05a7035b6b5b" name="FechaNacAnio" type="Int32" label="FechaNacAnio : Int32" nullable="true" kind="Persistent" fieldName="fechaNacAnio" />
       <Property Id="742f4461-179d-40c9-b69f-a6e3e460d90c" name="NumeroSocio" label="NumeroSocio : String" kind="Persistent" fieldName="numeroSocio" />
       <Property Id="d7349bce-2e44-4d12-9720-63aa7ecb35c6" name="Activo" type="Boolean" label="Activo : Boolean" nullable="true" kind="Persistent" fieldName="activo" />
+      <Property Id="727c1943-a7a8-45cb-a949-c9315d69aff6" name="ContactoTelefono" label="ContactoTelefono : String" kind="Persistent" fieldName="contactoTelefono" />
+      <Property Id="abe8eccc-07af-4787-a5b8-604ec56e9a07" name="ContactoParentezco" label="ContactoParentezco : String" kind="Persistent" fieldName="contactoParentezco" />
+      <Property Id="59845322-7021-4c4d-b467-6903e5586376" name="ContactoNombre" label="ContactoNombre : String" kind="Persistent" fieldName="contactoNombre" />
       <AssociationTargets>
-        <Association Id="91925995-bdf6-449d-8563-f146727d1240" SourceMultiplicity="ZeroOne" name="JugadorHasClub">
+        <Association Id="fa6e8090-d582-4312-bdab-4abd17ebb3dc" SourceMultiplicity="ZeroOne" name="JugadorHasClub">
           <DomainClassMoniker name="/ModeloDeDominio/Club" />
           <targetNavigationalProperty>
-            <associationDefinesTargetProperty Id="7e45a5c9-271b-49e1-9762-450b5d265a16">
+            <associationDefinesTargetProperty Id="51af2155-1f95-416a-9252-f24ce3eebb55">
               <NavigationalPropertyMoniker name="/ModeloDeDominio/Club/Jugadors" />
             </associationDefinesTargetProperty>
           </targetNavigationalProperty>
           <sourceNavigationalProperty>
-            <associationDefinesSourceProperty Id="4b3793c1-9ddb-4b0d-8c2c-fbe1bed21981">
+            <associationDefinesSourceProperty Id="a3198536-49c1-4401-8fc9-5a895890532d">
               <NavigationalPropertyMoniker name="/ModeloDeDominio/Jugador/Club" />
             </associationDefinesSourceProperty>
           </sourceNavigationalProperty>
         </Association>
       </AssociationTargets>
       <navigationalProperties>
-        <classHasNavigationalProperties Id="deb706f6-343b-4951-a5d3-cf4df5862acf">
-          <NavigationalProperty Id="925f0389-9142-4f89-ab0a-5985a3fd5c32" name="Club" type="Club" label="Club : Club" nullable="true" kind="Persistent" fieldName="club" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="f3f75a2d-9f40-4dca-9896-63a408377443">
+          <NavigationalProperty Id="a34f71b4-2173-4541-a482-d66ccc8d2554" name="Club" type="Club" label="Club : Club" nullable="true" kind="Persistent" fieldName="club" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="94e398da-b58b-4c7b-877f-d20fd1b44ce7">
+          <NavigationalProperty Id="262187dc-d6c0-41e6-96b7-771b4cf62961" name="PagoJugadors" type="IList&lt;PagoJugador&gt;" label="PagoJugadors : IList&lt;PagoJugador&gt;" nullable="true" kind="Persistent" fieldName="pagoJugadors" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
@@ -284,17 +450,87 @@
       <Property Id="1a8b651f-9061-4aaa-a5aa-b7398574bab1" name="DomicilioCampoJuego" label="DomicilioCampoJuego : String" kind="Persistent" fieldName="domicilioCampoJuego" />
       <Property Id="cbc1eac5-02ea-40dc-a97a-0aa954dea2c2" name="ColoresOficiales" label="ColoresOficiales : String" kind="Persistent" fieldName="coloresOficiales" />
       <Property Id="ffbb5ece-2704-41b2-812f-c1eefefa34c6" name="ColoresAlternativos" label="ColoresAlternativos : String" kind="Persistent" fieldName="coloresAlternativos" />
+      <Property Id="d08bf01a-8d47-439d-b5e0-6233d55f12e9" name="NombreCorto" label="NombreCorto : String" kind="Persistent" fieldName="nombreCorto" />
       <navigationalProperties>
-        <classHasNavigationalProperties Id="c3e2ed65-633b-45fc-9081-cfd28fdac382">
-          <NavigationalProperty Id="46a46fb8-1e6e-4ecb-85f7-85978fde32cf" name="Jugadors" type="IList&lt;Jugador&gt;" label="Jugadors : IList&lt;Jugador&gt;" nullable="true" kind="Persistent" fieldName="jugadors" isDependent="false" isManaged="false" />
+        <classHasNavigationalProperties Id="61af9820-471e-4990-a853-1a6f9944ce0f">
+          <NavigationalProperty Id="d9071149-7182-423d-94af-4771337438a6" name="Jugadors" type="IList&lt;Jugador&gt;" label="Jugadors : IList&lt;Jugador&gt;" nullable="true" kind="Persistent" fieldName="jugadors" isDependent="false" isManaged="false" />
         </classHasNavigationalProperties>
       </navigationalProperties>
     </DomainClass>
     <DomainClass Id="125c1b93-1159-4822-ad2a-a317fb7dfa08" name="Usuario" namespace="CapaDominio" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="IdUsuario">
       <Property Id="18c8bbeb-b23c-4695-9e5b-441d77722ec6" name="IdUsuario" type="Int32" label="IdUsuario : Int32" kind="Persistent" identity="true" fieldName="idUsuario" />
-      <Property Id="a6d2dc47-e51b-4738-be6e-4312a2d7bf5b" name="Nivel" type="Int32" label="Nivel : Int32" kind="Persistent" fieldName="nivel" />
-      <Property Id="75b2ea7b-7bd3-4a47-b2d1-c068ffedc7b0" name="Password" label="Password : String" kind="Persistent" fieldName="password" />
-      <Property Id="ade29bec-5d5e-415f-9ac8-9bdccbf0b1fb" name="Usuario1" label="Usuario1 : String" kind="Persistent" fieldName="usuario1" />
+      <Property Id="090da7e5-5673-4dbb-ba0a-75d4d1883caf" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
+      <Property Id="43184390-0baf-46e6-8a7a-75deff299825" name="Mail" label="Mail : String" kind="Persistent" fieldName="mail" />
+      <Property Id="324a530e-06d3-4583-b97f-88a6bdddfd91" name="Grupo" type="Int32" label="Grupo : Int32" kind="Persistent" fieldName="grupo" />
+      <Property Id="40ab3d84-f234-488a-82a6-258d351102e3" name="Contrasenia" label="Contrasenia : String" kind="Persistent" fieldName="contrasenia" />
+    </DomainClass>
+    <DomainClass Id="5a82f0ff-6983-406a-8faf-574d905c665c" name="PagoJugador" namespace="CapaDominio" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="IdPagoJugador">
+      <Property Id="d69a4f20-015e-4205-9f33-0bd2ad6c69c1" name="IdPagoJugador" type="Int32" label="IdPagoJugador : Int32" kind="Persistent" identity="true" fieldName="idPagoJugador" />
+      <Property Id="e268c655-9a0a-4221-b5e1-d8e736213d95" name="Detalle" label="Detalle : String" kind="Persistent" fieldName="detalle" />
+      <Property Id="7c12096d-09dd-473e-b0d1-9ce2b60e43b8" name="IdCuotaJugador" type="Int32" label="IdCuotaJugador : Int32" kind="Persistent" fieldName="idCuotaJugador" />
+      <Property Id="f3984fcf-bfd1-4069-9c58-44b6bdcaa6c3" name="IdJugador" type="Int32" label="IdJugador : Int32" kind="Persistent" fieldName="idJugador" />
+      <Property Id="fbb132ed-b490-4b45-b939-04a9091a8795" name="Monto" type="Decimal" label="Monto : Decimal" nullable="true" kind="Persistent" fieldName="monto" />
+      <Property Id="12ad36e0-84d0-40cf-978c-1cc7a3806eaa" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
+      <Property Id="233d1c19-59a1-4b41-b346-54c80bbd8f4f" name="Observaciones" label="Observaciones : String" kind="Persistent" fieldName="observaciones" />
+      <Property Id="b8687b42-3cff-4c9f-95b8-889a6d5f50c5" name="FechaPagoMes" label="FechaPagoMes : String" kind="Persistent" fieldName="fechaPagoMes" />
+      <Property Id="ea803ecf-85d1-4edd-8d6b-9c14cd2e1845" name="FechaPagoDia" type="Int32" label="FechaPagoDia : Int32" nullable="true" kind="Persistent" fieldName="fechaPagoDia" />
+      <Property Id="0eed7800-eec4-437e-942c-207c62db4fb8" name="FechaPagoAnio" type="Int32" label="FechaPagoAnio : Int32" nullable="true" kind="Persistent" fieldName="fechaPagoAnio" />
+      <Property Id="8b5ff6f2-4cad-4939-a64b-f57e73390041" name="PorcentajeDescuento" type="Int32" label="PorcentajeDescuento : Int32" nullable="true" kind="Persistent" fieldName="porcentajeDescuento" />
+      <Property Id="91bb549b-09ad-4476-803b-e0f774aaf41f" name="FechaPago" type="DateTime" label="FechaPago : DateTime" nullable="true" kind="Persistent" fieldName="fechaPago" />
+      <Property Id="11a51fcb-b5d3-455e-8db2-1feb3ba74c35" name="Descuento" type="Boolean" label="Descuento : Boolean" nullable="true" kind="Persistent" fieldName="descuento" />
+      <AssociationTargets>
+        <Association Id="18ed1628-3927-45ad-bf18-1d3383d301e0" SourceMultiplicity="One" name="PagoJugadorHasJugador">
+          <DomainClassMoniker name="/ModeloDeDominio/Jugador" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="8714dba1-a448-428e-8573-7c4ccc6c5f61">
+              <NavigationalPropertyMoniker name="/ModeloDeDominio/Jugador/PagoJugadors" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="f4c07aef-4553-4cb1-b90b-e1fe749894a4">
+              <NavigationalPropertyMoniker name="/ModeloDeDominio/PagoJugador/Jugador" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="2c58e9ff-d844-41fa-a560-a3c7705f6626" SourceMultiplicity="One" name="PagoJugadorHasCuotaJugador">
+          <DomainClassMoniker name="/ModeloDeDominio/CuotaJugador" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="89c1a4ad-f4a2-4632-ba1e-2a22abe34060">
+              <NavigationalPropertyMoniker name="/ModeloDeDominio/CuotaJugador/PagoJugadors" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="0d3f1d8d-a1cf-4a56-9749-88da02d15b32">
+              <NavigationalPropertyMoniker name="/ModeloDeDominio/PagoJugador/CuotaJugador" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="adc2c89b-dd6f-4945-8b28-6de457536570">
+          <NavigationalProperty Id="a5514939-dc6c-4bf0-bbd8-329d0a82f400" name="Jugador" type="Jugador" label="Jugador : Jugador" nullable="true" kind="Persistent" fieldName="jugador" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="920753e7-70df-4e21-807f-cd4f5119a23a">
+          <NavigationalProperty Id="dae737b6-a316-47be-8d48-29b83c33db85" name="CuotaJugador" type="CuotaJugador" label="CuotaJugador : CuotaJugador" nullable="true" kind="Persistent" fieldName="cuotaJugador" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="d681ead8-2c76-4af9-81e1-fba26a818cfa" name="CuotaJugador" namespace="CapaDominio" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true" identityMechanismMember="IdCuotaJugador">
+      <Property Id="a2bf7e26-ca05-4b0e-8793-6ee9dd7c94ac" name="IdCuotaJugador" type="Int32" label="IdCuotaJugador : Int32" kind="Persistent" identity="true" fieldName="idCuotaJugador" />
+      <Property Id="648d0ded-4919-4209-ad86-cdbc38bf7ca5" name="Detalle" label="Detalle : String" kind="Persistent" fieldName="detalle" />
+      <Property Id="76c3c46b-38f5-4731-93cb-995023ac88f7" name="Monto" type="Decimal" label="Monto : Decimal" nullable="true" kind="Persistent" fieldName="monto" />
+      <Property Id="f21472a9-5ed7-4a97-967c-f852a605eb5b" name="Nombre" label="Nombre : String" kind="Persistent" fieldName="nombre" />
+      <Property Id="6ecceffe-def0-45e5-ae02-77544d82fbc7" name="Observaciones" label="Observaciones : String" kind="Persistent" fieldName="observaciones" />
+      <Property Id="247e4778-5244-48b8-a9c3-73fd92eaec46" name="FechaVencimientoMes" label="FechaVencimientoMes : String" kind="Persistent" fieldName="fechaVencimientoMes" />
+      <Property Id="4c8366a1-c86e-46a7-8b0f-569bac22a2c5" name="FechaVencimientoDia" type="Int32" label="FechaVencimientoDia : Int32" nullable="true" kind="Persistent" fieldName="fechaVencimientoDia" />
+      <Property Id="6d59ec40-da1f-4265-bc1b-0f24a690635c" name="FechaVencimientoAnio" type="Int32" label="FechaVencimientoAnio : Int32" nullable="true" kind="Persistent" fieldName="fechaVencimientoAnio" />
+      <Property Id="48f34593-76dc-4100-980c-7f21c5b6616a" name="Anio" type="Int32" label="Anio : Int32" nullable="true" kind="Persistent" fieldName="anio" />
+      <Property Id="f07e4e5e-0d55-44a6-913c-bd842159933d" name="FechaVencimiento" type="DateTime" label="FechaVencimiento : DateTime" nullable="true" kind="Persistent" fieldName="fechaVencimiento" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="f763a796-e89b-4633-87fc-bfd7363938a9">
+          <NavigationalProperty Id="462814eb-8795-4e7f-8470-c5cf152576d5" name="PagoJugadors" type="IList&lt;PagoJugador&gt;" label="PagoJugadors : IList&lt;PagoJugador&gt;" nullable="true" kind="Persistent" fieldName="pagoJugadors" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
     </DomainClass>
   </Types>
   <domainContext>
@@ -303,6 +539,8 @@
         <entitySetProperty name="Jugadors" namespace="CapaDominio" type="Jugador" label="Jugadors : IQueryable&lt;CapaDominio.Jugador&gt;" />
         <entitySetProperty name="Clubs" namespace="CapaDominio" type="Club" label="Clubs : IQueryable&lt;CapaDominio.Club&gt;" />
         <entitySetProperty name="Usuarios" namespace="CapaDominio" type="Usuario" label="Usuarios : IQueryable&lt;CapaDominio.Usuario&gt;" />
+        <entitySetProperty name="PagoJugadors" namespace="CapaDominio" type="PagoJugador" label="PagoJugadors : IQueryable&lt;CapaDominio.PagoJugador&gt;" />
+        <entitySetProperty name="CuotaJugadors" namespace="CapaDominio" type="CuotaJugador" label="CuotaJugadors : IQueryable&lt;CapaDominio.CuotaJugador&gt;" />
       </domainContainer>
     </domainModelHasDomainContext>
   </domainContext>

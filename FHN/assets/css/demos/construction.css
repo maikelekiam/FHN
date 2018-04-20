@@ -1,0 +1,7 @@
+.patt-bg{
+	background-image:url(../../images/demos/construction/pattern-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	padding-right: 70px;
+	padding-left: 70px
+}

@@ -1,0 +1,325 @@
+﻿body,.page-loader,hr.dev-style4:before,.panel,.main-wrapper,.top-cart .cart-box,.top-search input[type=text],.header-2.boxed .logo,.header-2.boxed > .container,.top-head.sticky-nav,.post-item .lft-tools,.pricing-tbl,.white-bg,.widget h4.widget-title,
+.testimonials-bg:before,.testimonials-bg:after,.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover,.modal-content{
+	background-color: #333;
+}
+.white,.header-1 .top-nav > ul > li:hover > a,.header-1 .top-nav > ul > li.selected > a,.header-1 .top-search > a,.header-1 .top-cart > a,.top-nav ul ul li a,.dark-bg,.darker-bg,.red-bg,.pink-bg,.main-gradient,.team-box.box-1:hover .team-socials a i:before,
+.header-2 .top-nav > ul > li:hover > a,.header-1 .top-search .search-box input[type=text],.skew-nav > ul > li:hover > a,.skew-nav > ul > li.selected > a,.top-head.transparent.dark:not(.sticky-nav) .top-nav > ul > li:not(.selected) > a,.top-bar.dark,.modal-header.main-bg h4,
+.top-head.transparent.dark .top-search > a,.top-head.transparent.dark .top-cart > a,.top-bar.main-bg a,.top-bar.main-bg .social-list a,.black-bg,.top-bar.semi.dark a,.top-bar.semi.dark .social-list a,a.main-bg:hover,.divider.bg i,
+#footWrapper.footer-bg.dark .widget_it_widget_tweets li.h-entry:after,.main-bg > a:hover,.main-bg a:focus,.sidebar_widgets .widget_it_widget_tweets .slick-prev, .sidebar_widgets .widget_it_widget_tweets .slick-next{
+	color:#fff
+}
+.top-head.sticky-nav .top-nav > ul > li.selected > a,.btn.main-bg:focus,.white-import,.pagination.style2 > li > a, .pagination.style2 > li > span{
+	color:#fff !important
+}
+.header-1:not(.sticky-nav) .top-search .search-box input[type=text]::-webkit-input-placeholder {
+    color:#fff;
+}
+.header-1:not(.sticky-nav) .top-search .search-box input[type=text]:-moz-placeholder {
+    color:#fff;
+}
+.header-1:not(.sticky-nav) .top-search .search-box input[type=text]::-moz-placeholder {
+    color:#fff;
+}
+.header-1:not(.sticky-nav) .top-search .search-box input[type=text]:-ms-input-placeholder {
+    color:#fff;
+}
+.white-border{
+	border:1px #fff solid
+}
+.top-nav li i, .black-bg a:not(.main-color):not(.btn), .black-bg a:not(.main-bg):not(.btn), .black-bg, .gry, .dark-bg a,.darker-bg,.darker-bg a{
+	color:#999
+}
+body,.pricing-tbl.style-3 .price_txt,.pricing-tbl.selected.style-3 .price_txt,.pricing-tbl.style-3:hover .price_txt,.menu-tabs .white-bg a,.menu-tabs .white-bg i {
+	color:#999
+}
+a,a:hover,a:focus,h1, h2, h3, h4, h5, h6,.sticky-nav .top-search > a,.sticky-nav .top-cart > a,.team-box.box-1 .team-socials .social-list li a,.top-nav .mega-menu .nav-tabs a:hover,.black-color {
+	color:#999
+}
+.top-nav .mega-menu > ul > li h4{
+	color:#333
+}
+.progress-bars.tiny-line .progress .progress-bar span{
+	color: #999;
+}
+.black {
+	color:#111 !important
+}
+.post-item,.team-box.box-1,.pricing-tbl.style-3 .price_txt,.page-title,.accordion h5.acc-head a,.sidebar-widgets:after{
+	background-color: #2F2F2F;
+}
+.gry-bg,.gry-bar,.gry-bg .testimonials-bg:before,.gry-bg .testimonials-bg:after,.form-control, select,.input-group-addon,.list-group-item,.pageWrapper.boxed{
+	background-color:#222
+}
+.icon-box-2 .box-number,footer.footer-bg.dark .tags li a {
+	border-color: #222;
+}
+.header-1,.tabs.gr-bg .nav>li:not(.active)>a{
+	background-color: #232323
+}
+.gry-color,.highlight pre code{
+	color:#eee
+}
+.icon-box-1,.sidebar-widgets,.filter-by.style3 ul,.pricing-tbl.style-2.selected,.sitemap > ul > li > a,.highlight,.well,.list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover,.pagination>li>a, .pagination>li>span,.pager li>a, .pager li>span,
+.pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span,.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover{
+	background-color: #2D2D2D;
+}
+.header-2.boxed:not(.sticky-nav) > .container:not(.top-bar-cont),.header-2.boxed:not(.sticky-nav) .logo,.tabs.gr-bg .nav>li:not(.active)>a{
+	border: 1px #555 solid;
+}
+.header-2 .top-nav > ul > li,.header-2 .top-cart,.header-2 .top-search,.header-2 .top-nav > ul > li,.header-1.sticky-nav .actsrch{
+	border-left: 1px #555 solid;
+}
+.header-2.center-logo .responsive-nav{
+	border-color:#f0f0f0
+}
+.gry-border-vertical:after{
+	border-left: 1px #555 dashed;
+}
+.team-box.box-1 .team-socials,.breadcrumbs.style2,.breadcrumbs.style3,.list-grid a,.product-img,.add-items i{
+	background-color: #272727;
+}
+.top-head.transparent:not(.header-1),.top-bar.transparent,.widget_menu ul li a,.w-recent-posts li,.widget-categories li,.w-recent-comments li,.top-bar{
+	border-bottom:1px rgba(0,0,0,.1) solid
+}
+.top-head.semi.transparent.dark:not(.header-1),.top-head.transparent.light,.top-head.transparent.dark:not(.header-1){
+	border-bottom:1px rgba(255,255,255,.1) solid
+}
+.widget_menu ul li{
+	border-bottom:1px #555 solid 
+}
+.w-recent-posts li,.widget-categories li,.w-recent-comments li{
+	border-top:1px #fff solid 
+}
+.top-head.transparent .logo{
+	border-right:1px rgba(0,0,0,.1) solid
+}
+.top-head.semi.transparent.dark .logo,.top-head.transparent.light .logo,.top-head.transparent.dark .logo{
+	border-right:1px rgba(255,255,255,.1) solid
+}
+.light-gry-border,.pricing-tbl,.divider.bordered i,.widget h4.widget-title{
+	border: 1px #555 solid;
+}
+.page-title{
+	border-bottom: 1px #444 solid;
+	border-top: 1px #444 solid;
+}
+.filter-by.style4 ul li a {
+    border-left: 1px #555 solid;
+}
+.filter-by.style4 ul {
+    border: 1px #555 solid;
+}
+.bottom-head{
+	border-top: 1px #555 solid;
+}
+.breadcrumbs{
+	border-bottom:1px #555 solid;
+}
+.steps-1 i:after,.steps-1 h4:before,.divider.bg i,.divider.centered:before,.divider.centered:after,.divider.lft:before,.divider.rit:before,.add-items i:hover,.panel-default>.panel-heading,.center-v-line:before,
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+	background-color: #555;
+}
+.divider i{
+	color:#d5d5d5;
+}
+.btn-gry-border,.gry-border,.top-bar-search,.breadcrumbs.style2,.breadcrumbs.style3,.filter-by.style5,.shop-item .item-box,.toolsBar select{
+	border: 1px #444 solid;
+}
+.steps-1-container:before,.pricing-tbl ul li{
+	border-top: 1px #555 dashed;
+}
+.dark-one .steps-1-container:before,.dark-one .pricing-tbl ul li{
+	border-top:1px #555 dashed;
+}
+.bot-3-border{
+	border-bottom:3px #ddd solid
+}
+.top-3-border,.tabs.bottom.bordered .tab-content>.tab-pane,.tabs.bottom .nav-tabs{
+	border-top:4px #ddd solid
+}
+.tabs.vertical .tab-content>.tab-pane{
+	border-top:1px #ddd solid
+}
+.separated-cells div div{
+	border-left:1px #ddd dotted
+}
+.clients-grid > div:before,.testimonials-grid > div:before{
+	border-left: 1px #555 dashed;
+}
+.clients-grid > div:after,.testimonials-grid > div:after,.heading.style2,.custom-list.style2 li {
+	border-bottom: 1px #555 dashed;
+}
+.responsive-utilities td.is-hidden{
+	background-color: transparent !important
+}
+.progress,.table-striped>tbody>tr:nth-of-type(odd),.search-widget .txt-box,.share-post button span.share_num,.share-post button span{
+	background-color: #2b2b2b
+}
+.share-post button span.share_num,.share-post button span,.btn-default,.btn-default:hover{
+	color:#999;
+}
+hr,.accordion h5.acc-head a,.accordion.bordered,.accordion.radius .acc-content,.filter-by.style3 ul li,.toolsBar,.top-nav.with-borders > ul > li > a,.top-shop-links i,input[type="text"], select, textarea,.input-group-addon,blockquote,.social-list a i,.tags li a,
+hr.dev-style4,.well,.panel-default,.panel-default>.panel-heading,hr.dev-style5,.icon-border,.list-group-item,.pagination>li>a, .pagination>li>span,.pager li>a, .pager li>span,.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover,
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover,.table-bordered,.nav-tabs,.tabs.bordered .tab-content>.tab-pane,.magazine .search-widget .txt-box,
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th,.social-list a i.gry-bg,.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover,
+.top-3-border, .tabs.bottom.bordered .tab-content>.tab-pane, .tabs.bottom .nav-tabs,.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th,.price-ul li:first-child .panel-heading,.magazine .sidebar-widgets,
+.post-tools > div, .post-tools > nav,.comment-list > li,ul.child-comment,ul.child-comment li,.masonry .post-item, .grid .post-item,.p-1-col .portfolio-item,.modal-footer,.recent-posts-widget li,.socials-widget .widget-content,.socials-widget .social-list li,
+hr.dev-style3,.btn-default{
+	border-color: #555;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	border-bottom-color: transparent;
+	color:#ccc;
+}
+.top-head:not(.header-1), .top-bar.transparent, .widget_menu ul li a, .w-recent-posts li, .widget-categories li, .w-recent-comments li, .top-bar{
+	border-bottom-color: transparent;
+}
+.tabs.bottom .nav-tabs>li.active>a, .tabs.bottom .nav-tabs>li.active>a:focus, .tabs.bottom .nav-tabs>li.active>a:hover, .tabs.vertical .nav-tabs>li.active>a, .tabs.vertical .nav-tabs>li.active>a:focus, .tabs.vertical .nav-tabs>li.active>a:hover{
+	border-bottom-color: #555 !important
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+	color:#fff;
+}
+hr.dev-style1 {
+    background-image: linear-gradient(to right, #333, #999, #333);
+}
+.tabs.bottom .nav-tabs>li.active>a, .tabs.bottom .nav-tabs>li.active>a:focus, .tabs.bottom .nav-tabs>li.active>a:hover,.tabs.vertical .nav-tabs>li.active>a, .tabs.vertical .nav-tabs>li.active>a:focus, .tabs.vertical .nav-tabs>li.active>a:hover {
+	border-bottom-color:#ddd
+}
+.post-item .lft-tools li{
+	border-bottom:1px #555 dashed;
+}
+.testimonials-1 p{
+	border: 1px #555 solid;
+}
+.dash-bord,#items-num,.conf-tabs{
+	border-color: #555 !important;
+}
+.header-1 .top-nav > ul > li > a{
+	color:#ccc;
+}
+.icon-box-1 i,.post-item .lft-tools li i,.dark-bg,.dark-bg a{
+	color: #777;
+}
+.team-box.box-1 .team-img{
+	border: 5px #000 solid;
+}
+.icon-box-1 .box-number:after,.icon-box-1 .box-number:before{
+	background-color: #0E0E0E;
+}
+.icon-box-1:after,.heading.main .head-sep:before,.heading.main .head-sep:after{
+	background-color: #C5C5C5;
+}
+.icon-box-1:before{
+	background-color: #E0E0E0;
+}
+.icon-box-3,.sidebar_widgets .widget_it_widget_tweets .slick-prev, .sidebar_widgets .widget_it_widget_tweets .slick-next,.black-bg,footer .divider.centered:before,footer .divider.centered:after,code,input[type="text"]{
+	background-color: #222;
+}
+.dark-bg{
+	background-color:#444;
+}
+.darker-bg,.black-bg .center-v-line:before,.black-bg .post-item .lft-tools,.dark-bg .post-item .lft-tools{
+	background-color:#333;
+}
+.table-hover>tbody>tr:hover{
+	background-color: #313131
+}
+.black-bg .post-item,.dark-bg .post-item,.top-head.sticky-nav.dark, .top-head.sticky-nav.dark-head,.top-head.sticky-nav,.abs-icons .icon,.top-head.box-head.light-head.sticky-nav > .container{
+	background-color: #111
+}
+.pickmeup{
+	background-color: #111 !important
+}
+.footer-bg.dark .divider.centered:before,.footer-bg.dark .divider.centered:after{
+	background-color:rgba(255,255,255,0.3);
+}
+.header-1.skew .top-nav > ul > li > a:after,.skew-nav > ul > li > a:after, .top-search.skew:before,.skew-nav ul li.selected a:after,.footer-top .skew-btn:after{
+	border-color: transparent transparent #111 transparent;
+}
+.header-1.skew .top-nav > ul > li > a:before,.skew-nav > ul > li > a:before, .skew .logo:before, .top-search.skew > a:before, .top-cart.skew:before{
+	border-color: #111 transparent transparent transparent;
+}
+.header-2.boxed .logo:after{
+	border-color: #616161 transparent transparent transparent;
+}
+.header-2.boxed .logo:before{
+	border-color: #868686 transparent transparent transparent;
+}
+.icon-box-3 .icon-desc:before{
+	border-color: #ccc transparent transparent transparent;
+}
+.icon-box-3:after{
+	border-color: #222222 transparent transparent transparent;
+}
+.icon-box-1{
+	border-color: #3e3e3e
+}
+.center-v-menu ul li a{
+	border-color: #555 !important
+}
+.btn-grey.btn-outlined, .btn-grey.btn-square_outlined{
+	color:#999;
+	border-color: #999
+}
+.conf-tabs{
+	background-color: #333 !important
+}
+.breadcrumbs.style2 a:before{
+	border-color: transparent transparent transparent #555;
+}
+.breadcrumbs.style2 a:after {
+    border-color: transparent transparent transparent #272727;
+}
+/* gradients */
+.header-1:before,.header-1 .top-nav:before, .skew-nav:before{
+	background: #333;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #333), color-stop(50%, #444), color-stop(100%, #333));
+    background: -webkit-linear-gradient(top, #333 0%, #444 50%, #333 100%);
+    background: linear-gradient(to bottom, #333 0%, #444 50%, #333 100%);
+    border: 1px #2e2e2e solid;
+}
+.grad-desk{
+	background: #222;
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #000000), color-stop(20%, #1D1D1D), color-stop(100%, #222222));
+	background: -webkit-linear-gradient(top, #000000 0%, #1D1D1D 20%, #222222 100%);
+	background: linear-gradient(to bottom, #000000 0%, #1D1D1D 20%, #222222 100%);
+}
+.header-1:not(.sticky-nav) .top-nav > ul > li > a > span:before,.header-1:not(.sticky-nav) .logo,.skew-nav > ul > li > a > span:before{
+	background: #333;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #222), color-stop(15%, #333), color-stop(50%, #333), color-stop(82%, #222), color-stop(100%, #111));
+    background: -webkit-linear-gradient(top, #222 0%, #333 15%, #333 50%, #222 82%, #111 100%);
+    background: linear-gradient(to bottom, #222 0%, #333 15%, #333 50%, #222 82%, #111 100%);
+}
+.header-1.dark:before,.skew-nav.dark:before{
+	background: #333;
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #333), color-stop(50%, #444), color-stop(100%, #333));
+	background: -webkit-linear-gradient(top, #333 0%, #444 50%, #333 100%);
+	background: linear-gradient(to bottom, #333 0%, #444 50%, #333 100%);
+	border:1px #2e2e2e solid
+}
+.header-1.dark:not(.sticky-nav) .top-nav > ul > li > a > span:before,.header-1.dark:not(.sticky-nav) .logo,.skew-nav.dark > ul > li > a > span:before{
+	background: #333;
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #222), color-stop(15%, #333), color-stop(50%, #333), color-stop(82%, #222), color-stop(100%, #111));
+	background: -webkit-linear-gradient(top, #222 0%, #333 15%, #333 50%, #222 82%, #111 100%);
+	background: linear-gradient(to bottom, #222 0%, #333 15%, #333 50%, #222 82%, #111 100%);
+}
+.icon-box-3:before{
+	background: #fff;
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(51, 51, 51)), color-stop(100%, rgb(68, 68, 68)));
+	background: -webkit-linear-gradient(top, rgb(51, 51, 51) 0%, rgb(68, 68, 68) 100%);
+	background: linear-gradient(to bottom, rgb(51, 51, 51) 0%, rgb(68, 68, 68) 100%);
+}
+
+
+@media (max-width: 992px){
+	.header-2 .responsive-nav {
+	    border: 1px #ddd solid;
+	    border-bottom: 0;
+	    border-left: 0;
+	}
+
+}
+#css_content pre{
+	color: #ccc
+}

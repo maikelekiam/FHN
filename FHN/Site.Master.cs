@@ -72,11 +72,31 @@ namespace FHN
             {
                 Response.Redirect("Login.aspx");
             }
+            else
+            {
+                lbl18.Text = "Bienvenido " + Session["userlogin"].ToString();
+
+                if (Session["usergrupo"].ToString() == "1")
+                {
+                    //dropdownusuarios.Visible = true;
+                    dropdownSistema.Visible = true;
+                }
+                else
+                {
+                    //dropdownusuarios.Visible = false;
+                    dropdownSistema.Visible = false;
+                }
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut();
+        }
+        protected void btnLogOff_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
         }
     }
 

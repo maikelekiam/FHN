@@ -1,0 +1,31 @@
+.rst-top-form{
+	position: absolute;
+	width: 100%;
+	padding: 30px;
+	left: 0;
+	bottom: 0;
+	z-index: 8
+}
+.loc-nb .name{
+	overflow: hidden;
+}
+.loc-nb .name h3,.loc-nb .name p{
+	margin-bottom: 0
+}
+.loc-nb .name h3{
+	line-height: 1
+}
+.loc-nb ul.custom-list li{
+	overflow: hidden;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px rgba(255,255,255,0.1) solid
+}
+.loc-nb .distance{
+	display: inline-block;
+	padding: 5px;
+	border-radius: 3px;
+	line-height: 1;
+	margin-top: 10px;
+	font-size: 12px
+}

@@ -20,12 +20,17 @@ namespace FHN
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            //Usuario usuario = new Usuario();
             Usuario usuario = ValidateUserDetail(txtuserid.Text, txtpassword.Text);
             if (usuario != null)
             {
                 Session["userlogin"] = txtuserid.Text;
-                nivel = usuario.Nivel;
+
+                Session["userid"] = Convert.ToString(usuario.IdUsuario);
+
+                Session["usergrupo"] = Convert.ToString(usuario.Grupo);
+
+                Session["usermail"] = Convert.ToString(usuario.Mail);
+
                 Response.Redirect("Default.aspx");
             }
             else

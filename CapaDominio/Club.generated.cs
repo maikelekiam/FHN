@@ -219,6 +219,19 @@ namespace CapaDominio
 			}
 		}
 		
+		private string nombreCorto;
+		public virtual string NombreCorto
+		{
+			get
+			{
+				return this.nombreCorto;
+			}
+			set
+			{
+				this.nombreCorto = value;
+			}
+		}
+		
 		private IList<Jugador> jugadors = new List<Jugador>();
 		public virtual IList<Jugador> Jugadors
 		{

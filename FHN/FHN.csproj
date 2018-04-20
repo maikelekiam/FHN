@@ -45,6 +45,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -161,15 +164,161 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="AltaClub.aspx" />
+    <Content Include="AltaCuotaJugador.aspx" />
     <Content Include="AltaJugador.aspx" />
+    <Content Include="AltaPagoJugador.aspx" />
+    <Content Include="AltaUsuario.aspx" />
+    <Content Include="assets\css\assets.css" />
+    <Content Include="assets\css\dark.css" />
+    <Content Include="assets\css\demos\construction.css" />
+    <Content Include="assets\css\demos\event.css" />
+    <Content Include="assets\css\demos\fashion.css" />
+    <Content Include="assets\css\demos\fonts\webfont-medical-icons.svg" />
+    <Content Include="assets\css\demos\lawyer.css" />
+    <Content Include="assets\css\demos\magazine.css" />
+    <Content Include="assets\css\demos\medical.css" />
+    <Content Include="assets\css\demos\real-estate.css" />
+    <Content Include="assets\css\demos\restaurant.css" />
+    <Content Include="assets\css\demos\travel.css" />
+    <Content Include="assets\css\demos\wedding.css" />
+    <Content Include="assets\css\light.css" />
+    <Content Include="assets\css\opensans.css" />
+    <Content Include="assets\css\pickmeup.css" />
+    <Content Include="assets\css\section-scroll.css" />
+    <Content Include="assets\css\shop.css" />
+    <Content Include="assets\css\shortcodes.css" />
+    <Content Include="assets\css\skins\1.css" />
+    <Content Include="assets\css\skins\2.css" />
+    <Content Include="assets\css\skins\default.css" />
+    <Content Include="assets\css\skins\4.css" />
+    <Content Include="assets\css\skins\5.css" />
+    <Content Include="assets\css\skins\6.css" />
+    <Content Include="assets\css\skins\7.css" />
+    <Content Include="assets\css\skins\default orig.css" />
+    <Content Include="assets\css\skins\8.css" />
+    <Content Include="assets\css\sliders\flexslider.css" />
+    <Content Include="assets\css\sliders\owl.carousel.css" />
+    <Content Include="assets\css\sliders\swiper.min.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\ajax-loader.gif" />
+    <Content Include="assets\images\blog\large\1.jpg" />
+    <Content Include="assets\images\blog\large\2.jpg" />
+    <Content Include="assets\images\blog\large\3.jpg" />
+    <Content Include="assets\images\blog\small\1.jpg" />
+    <Content Include="assets\images\blog\small\2.jpg" />
+    <Content Include="assets\images\blog\small\3.jpg" />
+    <Content Include="assets\images\browsers.png" />
+    <Content Include="assets\images\buildings-light.png" />
+    <Content Include="assets\images\buildings.png" />
+    <Content Include="assets\images\favicon.ico" />
+    <Content Include="assets\images\fondo03.jpg" />
+    <Content Include="assets\images\gmap_pin.png" />
+    <Content Include="assets\images\gmap_pin_grey.png" />
+    <Content Include="assets\images\gmap_pin_orange.png" />
+    <Content Include="assets\images\iphone-lg.png" />
+    <Content Include="assets\images\lg-img.png" />
+    <Content Include="assets\images\logo-lg.png" />
+    <Content Include="assets\images\logo-light.png" />
+    <Content Include="assets\images\logo-sm.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\menu-bg.png" />
+    <Content Include="assets\images\over.svg" />
+    <Content Include="assets\images\over2.svg" />
+    <Content Include="assets\images\pc.png" />
+    <Content Include="assets\images\screen.jpg" />
+    <Content Include="assets\images\sliders\others\1.jpg" />
+    <Content Include="assets\images\sliders\others\2.jpg" />
+    <Content Include="assets\images\sliders\others\3.jpg" />
+    <Content Include="assets\images\sliders\others\thumbs\1.jpg" />
+    <Content Include="assets\images\sliders\others\thumbs\2.jpg" />
+    <Content Include="assets\images\sliders\others\thumbs\3.jpg" />
+    <Content Include="assets\images\sliders\rev\slider1\1\camera.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\clock.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\cup.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\LaCie.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\magazine.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\man.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\pens.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\pinecone.png" />
+    <Content Include="assets\images\sliders\rev\slider1\1\slide-1-bg.jpg" />
+    <Content Include="assets\images\sliders\rev\slider1\1\tab.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\clock.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\cup.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\glasses.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\lamp.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\mob.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\notebook.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\plant.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\slide-2-bg.jpg" />
+    <Content Include="assets\images\sliders\rev\slider1\2\soda.png" />
+    <Content Include="assets\images\sliders\rev\slider1\2\woman.png" />
+    <Content Include="assets\images\sliders\rev\slider1\3\book.png" />
+    <Content Include="assets\images\sliders\rev\slider1\3\glass.png" />
+    <Content Include="assets\images\sliders\rev\slider1\3\slide-3-bg.jpg" />
+    <Content Include="assets\images\sliders\rev\slider1\3\speaker1.png" />
+    <Content Include="assets\images\sliders\rev\slider1\3\speaker2.png" />
+    <Content Include="assets\images\sliders\rev\slider1\3\tv.png" />
+    <Content Include="assets\images\sliders\rev\slider2\1\slide-1-bg.jpg" />
+    <Content Include="assets\images\sliders\rev\slider2\2\slide-2-bg.jpg" />
+    <Content Include="assets\images\sliders\rev\slider3\1\man.png" />
+    <Content Include="assets\images\sliders\rev\slider3\1\slide-1.jpg" />
+    <Content Include="assets\images\tablo.png" />
+    <Content Include="assets\images\testimonials\1-lg.jpg" />
+    <Content Include="assets\images\testimonials\1.jpg" />
+    <Content Include="assets\images\testimonials\2-lg.jpg" />
+    <Content Include="assets\images\testimonials\2.jpg" />
+    <Content Include="assets\images\testimonials\3-lg.jpg" />
+    <Content Include="assets\images\testimonials\3.jpg" />
+    <Content Include="assets\images\world.png" />
+    <Content Include="assets\js\assets.js" />
+    <Content Include="assets\js\charts.js" />
+    <Content Include="assets\js\easyshare.js" />
+    <Content Include="assets\js\jquery-1.12.0.min.js" />
+    <Content Include="assets\js\jquery.gmap.js" />
+    <Content Include="assets\js\jquery.pickmeup.min.js" />
+    <Content Include="assets\js\jquery.section-scroll.js" />
+    <Content Include="assets\js\onepage-nav.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\sliders\jquery.flexslider-min.js" />
+    <Content Include="assets\js\sliders\owl.carousel.min.js" />
+    <Content Include="assets\js\sliders\swiper.jquery.min.js" />
+    <Content Include="assets\php\backgrounds\45-degree-fabric.png" />
+    <Content Include="assets\php\backgrounds\cloth-alike.png" />
+    <Content Include="assets\php\backgrounds\grey-sandbag.png" />
+    <Content Include="assets\php\backgrounds\kinda-jean.png" />
+    <Content Include="assets\php\backgrounds\polyester-lite.png" />
+    <Content Include="assets\php\backgrounds\stitched-wool.png" />
+    <Content Include="assets\php\backgrounds\white-carbon.png" />
+    <Content Include="assets\php\backgrounds\white-wave.png" />
     <Content Include="Contact.aspx" />
+    <Content Include="Contenidos.aspx" />
     <Content Include="css\bootstrap-datepicker.css" />
     <Content Include="css\bootstrap-select.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\estilo-textbox.css" />
     <Content Include="css\panel-collapsible.css" />
     <Content Include="css\select2.css" />
+    <Content Include="EditarClub.aspx" />
+    <Content Include="EditarCuotaJugador.aspx" />
     <Content Include="EditarJugador.aspx" />
+    <Content Include="EditarPagoJugador.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="imagenes\bg01.jpg" />
+    <Content Include="imagenes\bg02.jpg" />
+    <Content Include="imagenes\bg03.png" />
+    <Content Include="imagenes\copade.ico" />
+    <Content Include="imagenes\copade.png" />
+    <Content Include="imagenes\copade03.jpg" />
+    <Content Include="imagenes\copade04.jpg" />
+    <Content Include="imagenes\fhn-logo.jpg" />
+    <Content Include="imagenes\fnh.jpg" />
+    <Content Include="imagenes\fnh2.jpg" />
+    <Content Include="imagenes\fondo.png" />
+    <Content Include="assets\images\fondo.jpg" />
+    <Content Include="imagenes\ingresar.jpg" />
+    <Content Include="imagenes\ingresar03.png" />
     <Content Include="js\bootstrap-collapse.js" />
     <Content Include="js\bootstrap-datepicker.js" />
     <Content Include="js\bootstrap-hover-dropdown.js" />
@@ -181,8 +330,14 @@
     <Content Include="js\panel-collapsible.js" />
     <Content Include="js\select2.js" />
     <Content Include="ListarClubes.aspx" />
+    <Content Include="ListarCuotasJugador.aspx" />
     <Content Include="ListarJugadores.aspx" />
+    <Content Include="ListarPagosJugador.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MostrarClub.aspx" />
+    <Content Include="MostrarCuotaJugador.aspx" />
+    <Content Include="MostrarJugador.aspx" />
+    <Content Include="MostrarPagoJugador.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -195,8 +350,28 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
+    <Content Include="assets\css\demos\fonts\webfont-medical-icons.eot" />
+    <Content Include="assets\css\demos\fonts\webfont-medical-icons.ttf" />
+    <Content Include="assets\css\demos\fonts\webfont-medical-icons.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\images\sliders\others\Thumbs.db" />
+    <Content Include="assets\images\sliders\others\thumbs\Thumbs.db" />
+    <Content Include="assets\php\backgrounds\Thumbs.db" />
+    <Content Include="assets\php\captcha.php" />
+    <Content Include="assets\php\careers.php" />
+    <Content Include="assets\php\fonts\times_new_yorker.ttf" />
+    <Content Include="assets\php\sendemail.php" />
     <None Include="Project_Readme.html" />
     <Content Include="Site.Mobile.Master" />
+    <None Include="Properties\PublishProfiles\profile_fhn.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -247,12 +422,33 @@
     <Compile Include="AltaClub.aspx.designer.cs">
       <DependentUpon>AltaClub.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AltaCuotaJugador.aspx.cs">
+      <DependentUpon>AltaCuotaJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaCuotaJugador.aspx.designer.cs">
+      <DependentUpon>AltaCuotaJugador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AltaJugador.aspx.cs">
       <DependentUpon>AltaJugador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AltaJugador.aspx.designer.cs">
       <DependentUpon>AltaJugador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaPagoJugador.aspx.cs">
+      <DependentUpon>AltaPagoJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaPagoJugador.aspx.designer.cs">
+      <DependentUpon>AltaPagoJugador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaUsuario.aspx.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaUsuario.aspx.designer.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -271,6 +467,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contenidos.aspx.cs">
+      <DependentUpon>Contenidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contenidos.aspx.designer.cs">
+      <DependentUpon>Contenidos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,12 +481,33 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarClub.aspx.cs">
+      <DependentUpon>EditarClub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarClub.aspx.designer.cs">
+      <DependentUpon>EditarClub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCuotaJugador.aspx.cs">
+      <DependentUpon>EditarCuotaJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarCuotaJugador.aspx.designer.cs">
+      <DependentUpon>EditarCuotaJugador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditarJugador.aspx.cs">
       <DependentUpon>EditarJugador.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EditarJugador.aspx.designer.cs">
       <DependentUpon>EditarJugador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPagoJugador.aspx.cs">
+      <DependentUpon>EditarPagoJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPagoJugador.aspx.designer.cs">
+      <DependentUpon>EditarPagoJugador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -295,12 +519,26 @@
     <Compile Include="ListarClubes.aspx.designer.cs">
       <DependentUpon>ListarClubes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListarCuotasJugador.aspx.cs">
+      <DependentUpon>ListarCuotasJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarCuotasJugador.aspx.designer.cs">
+      <DependentUpon>ListarCuotasJugador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListarJugadores.aspx.cs">
       <DependentUpon>ListarJugadores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ListarJugadores.aspx.designer.cs">
       <DependentUpon>ListarJugadores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPagosJugador.aspx.cs">
+      <DependentUpon>ListarPagosJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPagosJugador.aspx.designer.cs">
+      <DependentUpon>ListarPagosJugador.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -310,6 +548,34 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MostrarClub.aspx.cs">
+      <DependentUpon>MostrarClub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarClub.aspx.designer.cs">
+      <DependentUpon>MostrarClub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarCuotaJugador.aspx.cs">
+      <DependentUpon>MostrarCuotaJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarCuotaJugador.aspx.designer.cs">
+      <DependentUpon>MostrarCuotaJugador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarJugador.aspx.cs">
+      <DependentUpon>MostrarJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarJugador.aspx.designer.cs">
+      <DependentUpon>MostrarJugador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarPagoJugador.aspx.cs">
+      <DependentUpon>MostrarPagoJugador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarPagoJugador.aspx.designer.cs">
+      <DependentUpon>MostrarPagoJugador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

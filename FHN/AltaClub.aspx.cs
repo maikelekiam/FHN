@@ -12,6 +12,7 @@ namespace FHN
     public partial class AltaClub : System.Web.UI.Page
     {
         ClubNego clubNego = new ClubNego();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
@@ -20,6 +21,7 @@ namespace FHN
         protected void btnGuardarClub_Click(object sender, EventArgs e)
         {
             GuardarClub();
+
             Response.Redirect("ListarClubes.aspx");
         }
         private void GuardarClub()
@@ -27,6 +29,7 @@ namespace FHN
             Club club = new Club();
 
             club.NombreInstitucional = txtNombreInstitucional.Text;
+            club.NombreCorto = txtNombreCorto.Text;
             club.IdInterno = txtIdInterno.Text;
             club.PersoneriaJuridica = txtPersoneriaJuridica.Text;
             club.AnioAfiliacion = txtAnioAfiliacion.Text;

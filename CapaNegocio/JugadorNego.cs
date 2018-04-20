@@ -12,16 +12,30 @@ namespace CapaNegocio
     {
         JugadorRepo jugadorRepo = new JugadorRepo();
 
+        public IEnumerable<Jugador> MostrarJugadores()
+        {
+            return jugadorRepo.MostrarJugadores();
+        }
+        public string TraerJugador(int id)
+        {
+            return jugadorRepo.TraerJugador(id);
+        }
         public void GuardarJugador(Jugador jugador)
         {
             jugadorRepo.GuardarJugador(jugador);
         }
-
+        public int TraerJugadorIdSegunItem(string item1, string item2)
+        {
+            return jugadorRepo.TraerJugadorIdSegunItem(item1, item2);
+        }
+        public Jugador ObtenerJugador(int id)
+        {
+            return jugadorRepo.ObtenerJugador(id);
+        }
         public IEnumerable<Jugador> ListarJugadores()
         {
             return jugadorRepo.ListarJugadores();
         }
-
         public void ActualizarJugador(Jugador jugador)
         {
             jugadorRepo.ActualizarJugador(jugador);

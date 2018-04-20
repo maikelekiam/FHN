@@ -9,7 +9,25 @@ namespace CapaRepositorio
 {
     public class JugadorRepo
     {
-        // METODO PARA GUARDAR UN JUGADOR
+        public IEnumerable<Jugador> MostrarJugadores()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Jugador> result = modeloDeDominio.Jugadors.ToList();
+                return modeloDeDominio.CreateDetachedCopy(result);
+            }
+        }
+        public string TraerJugador(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Jugador result = modeloDeDominio.Jugadors.Where(c => c.IdJugador == id).FirstOrDefault();
+
+                modeloDeDominio.CreateDetachedCopy(result);
+
+                return result.Apellido + "," + result.Nombre;
+            }
+        }
         public void GuardarJugador(Jugador jugador)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
@@ -18,8 +36,6 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
             }
         }
-
-        // METODO PARA MOSTRAR LAS PERSONAS
         public IEnumerable<Jugador> ListarJugadores()
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
@@ -29,8 +45,26 @@ namespace CapaRepositorio
                 return modeloDeDominio.CreateDetachedCopy(result);
             }
         }
+        public int TraerJugadorIdSegunItem(string itemApellido, string itemNombre)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Jugador result = modeloDeDominio.Jugadors.Where(c => ((c.Nombre == itemNombre) && (c.Apellido == itemApellido))).FirstOrDefault();
+                modeloDeDominio.CreateDetachedCopy(result);
+                return result.IdJugador;
+            }
+        }
+        public Jugador ObtenerJugador(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Jugador result = modeloDeDominio.Jugadors.Where(c => c.IdJugador == id).FirstOrDefault();
 
-        // METODO PARA ACTUALIZAR UN JUGADOR
+                //modeloDeDominio.CreateDetachedCopy(result);
+
+                return result;
+            }
+        }
         public void ActualizarJugador(Jugador jugador)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
@@ -39,7 +73,6 @@ namespace CapaRepositorio
                 modeloDeDominio.SaveChanges();
             }
         }
-
         public List<Jugador> ListarUnicoJugador(int id)
         {
             List<Jugador> datosLista;

@@ -1,0 +1,104 @@
+.bullets-container {
+    display: table;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    z-index: 55;
+    font-weight: normal;
+}
+
+.section-bullets {
+    transition-duration: .3s;
+    list-style: none;
+    margin: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.section-bullets li {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+
+.section-bullets li a:before {
+    content: ' ';
+    width: 0;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transition-duration: .1s;
+}
+.section-bullets li a:after {
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    right: 20px;
+    top: 8px;
+    transition-duration: .2s;
+}
+
+.section-bullets li a {
+    color: #000;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    transition-duration: .3s;
+    opacity: 0.5;
+    margin-left: 5px;
+    padding: 8px 40px 6px 15px;
+    text-decoration: none;
+    min-height: 11px;
+}
+.dark-one .section-bullets li a:after{
+    background-color: #ddd
+}
+.dark-one .section-bullets li a{
+    color:#fff;
+}
+.section-bullets li span {
+    position: relative;
+    right: 0;
+    transition-duration: 0.3s;
+    opacity: 0;
+}
+
+.section-bullets li.active a {
+    opacity: 1;
+}
+
+.section-bullets li.active a:before {
+    width: 100%;
+    transition-duration: .3s;
+    transition-delay: 0.4s;
+}
+
+.section-bullets li:hover a {
+    opacity: 1;
+}
+
+.section-bullets li:hover span {
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+.section-bullets li.active span {
+    opacity: 1;
+    transition-duration: .3s;
+    transition-delay: 0.5s;
+}

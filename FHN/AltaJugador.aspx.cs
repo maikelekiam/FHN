@@ -22,8 +22,6 @@ namespace FHN
         {
             if (IsPostBack) return;
 
-            int anioHoy = DateTime.Now.Year;
-            for (int i = 0; i < 100; i++) { listaAnio.Add(anioHoy - i); }
             LlenarFechas();
 
             CargarListaClubes();
@@ -37,18 +35,34 @@ namespace FHN
 
         private void LlenarFechas()
         {
+            listaAnio.Clear();
+            int anioHoy = DateTime.Now.Year;
+            for (int i = 0; i < 100; i++) { listaAnio.Add(anioHoy - i); }
+
             ddlDia.DataSource = listaDia;
             ddlDia.DataBind();
+
             ddlMes.DataSource = listaMes;
             ddlMes.DataBind();
 
             ddlAnio.DataSource = listaAnio;
             ddlAnio.DataBind();
         }
-        protected void btnGuardarJugador_Click(object sender, EventArgs e)
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            GuardarJugador();
-            Response.Redirect("ListarJugadores.aspx");
+            if (ChequearFechas() == true)
+            {
+                //if ((txtNombre.Text != "") && (txtApellido.Text != "") && (ddlClub.SelectedValue != "-1"))
+                if ((txtNombre.Text != "") && (txtApellido.Text != ""))
+                {
+                    GuardarJugador();
+                    Response.Redirect("ListarJugadores.aspx");
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Correct", "alert('Complete los campos: NOMBRE y APELLIDO.')", true);
+                }
+            }
         }
         private void GuardarJugador()
         {
@@ -67,7 +81,19 @@ namespace FHN
             jugador.Domicilio = txtDomicilio.Text;
             jugador.NumeroSocio = txtNumeroSocio.Text;
             jugador.Sector = ddlSector.SelectedValue.ToString();
-            jugador.IdClub = Convert.ToInt32(ddlClub.SelectedValue);
+
+            if (ddlClub.SelectedValue != "-1")
+            {
+                jugador.IdClub = Convert.ToInt32(ddlClub.SelectedValue);
+            }
+            else
+            {
+                jugador.IdClub = null;
+            }
+
+            jugador.ContactoNombre = txtContactoNombre.Text;
+            jugador.ContactoParentezco = txtContactoParentezco.Text;
+            jugador.ContactoTelefono = txtContactoTelefono.Text;
 
             if (chkActivo.Checked)
             {
@@ -79,6 +105,28 @@ namespace FHN
             }
 
             jugadorNego.GuardarJugador(jugador);
+        }
+        public bool ChequearFechas()
+        {
+            if (ddlDia.Text == "30" || ddlDia.Text == "31")
+            {
+                if (ddlMes.Text == "Febrero")
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Correct", "alert('Fecha Ingresada Incorrecta.')", true);
+
+                    return false;
+                }
+            }
+            if (ddlDia.Text == "31")
+            {
+                if (ddlMes.Text == "Febrero" || ddlMes.Text == "Abril" || ddlMes.Text == "Junio" || ddlMes.Text == "Setiembre" || ddlMes.Text == "Noviembre")
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Correct", "alert('Fecha Ingresada Incorrecta.')", true);
+
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

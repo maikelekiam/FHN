@@ -74,6 +74,22 @@ namespace CapaDominio
 			}
 		}
 		
+		public IQueryable<PagoJugador> PagoJugadors 
+		{
+			get
+			{
+				return this.GetAll<PagoJugador>();
+			}
+		}
+		
+		public IQueryable<CuotaJugador> CuotaJugadors 
+		{
+			get
+			{
+				return this.GetAll<CuotaJugador>();
+			}
+		}
+		
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
@@ -104,6 +120,14 @@ namespace CapaDominio
 			get;
 		}
 		IQueryable<Usuario> Usuarios
+		{
+			get;
+		}
+		IQueryable<PagoJugador> PagoJugadors
+		{
+			get;
+		}
+		IQueryable<CuotaJugador> CuotaJugadors
 		{
 			get;
 		}

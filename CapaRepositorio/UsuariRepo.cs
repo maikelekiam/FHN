@@ -9,11 +9,52 @@ namespace CapaRepositorio
 {
     public class UsuarioRepo
     {
-        public Usuario ObtenerUsuario(String nombreUsuario, String password)
+        public Usuario ObtenerUsuario(String nombreUsuario, String contrasenia)
         {
             using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
             {
-                return modeloDeDominio.Usuarios.Where(c => c.Usuario1 == nombreUsuario && c.Password == password).FirstOrDefault();
+                return modeloDeDominio.Usuarios.Where(c => c.Nombre == nombreUsuario && c.Contrasenia == contrasenia).FirstOrDefault();
+
+            }
+        }
+        public void ActualizarUsuario(Usuario usuario)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.AttachCopy(usuario);
+                modeloDeDominio.SaveChanges();
+            }
+        }
+        public IEnumerable<Usuario> MostrarUsuarios()
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                IEnumerable<Usuario> result = modeloDeDominio.Usuarios.ToList();
+                return result;
+            }
+        }
+        public void GuardarUsuario(Usuario usuario)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                modeloDeDominio.Add(usuario);
+                modeloDeDominio.SaveChanges();
+            }
+        }
+        public Usuario ObtenerUsuario(int id)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                Usuario usuario = modeloDeDominio.Usuarios.Where(c => c.IdUsuario == id).FirstOrDefault();
+
+                return usuario;
+            }
+        }
+        public Usuario ControlarDuplicadoUsuario(String nombre)
+        {
+            using (ModeloDeDominio modeloDeDominio = new ModeloDeDominio())
+            {
+                return modeloDeDominio.Usuarios.Where(c => c.Nombre == nombre).FirstOrDefault();
 
             }
         }

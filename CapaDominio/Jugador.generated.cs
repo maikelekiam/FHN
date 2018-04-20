@@ -232,6 +232,45 @@ namespace CapaDominio
 			}
 		}
 		
+		private string contactoTelefono;
+		public virtual string ContactoTelefono
+		{
+			get
+			{
+				return this.contactoTelefono;
+			}
+			set
+			{
+				this.contactoTelefono = value;
+			}
+		}
+		
+		private string contactoParentezco;
+		public virtual string ContactoParentezco
+		{
+			get
+			{
+				return this.contactoParentezco;
+			}
+			set
+			{
+				this.contactoParentezco = value;
+			}
+		}
+		
+		private string contactoNombre;
+		public virtual string ContactoNombre
+		{
+			get
+			{
+				return this.contactoNombre;
+			}
+			set
+			{
+				this.contactoNombre = value;
+			}
+		}
+		
 		private Club club;
 		public virtual Club Club
 		{
@@ -242,6 +281,15 @@ namespace CapaDominio
 			set
 			{
 				this.club = value;
+			}
+		}
+		
+		private IList<PagoJugador> pagoJugadors = new List<PagoJugador>();
+		public virtual IList<PagoJugador> PagoJugadors
+		{
+			get
+			{
+				return this.pagoJugadors;
 			}
 		}
 		

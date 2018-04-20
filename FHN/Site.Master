@@ -3,48 +3,227 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Sistema Informatico para FHN</title>
+    <meta name="description" content="FHN | Multi-purpose HTML5 Template">
+    <meta name="author" content="IT-RAYS">
 
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/bootstrap-datepicker.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%--<link href="assets/css/opensans.css" type='text/css' rel="stylesheet" />--%>
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
+
+    <%--<link rel="shortcut icon" href="imagenes/copade.ico">--%>
+
+    <%--<link href="css/bootstrap-datepicker.css" rel="stylesheet" />--%>
+
     <link href="css/bootstrap-select.css" rel="stylesheet" />
+
+    <link href="css/estilo-textbox.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="assets/css/assets.css">
+
+    <style>
+        h3 {
+            font-family: 'Oswald','sans-serif';
+            /*text-transform: capitalize;*/
+            /*letter-spacing:0px;*/
+            /*font-weight:500;*/
+            /*font-size: large;*/
+        }
+    </style>
+
+    <!-- Template CSS files -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/shortcodes.css">
+    <link id="theme_css" rel="stylesheet" href="assets/css/light.css">
+    <link id="skin_css" rel="stylesheet" href="assets/css/skins/default.css">
 </head>
 
 
-<body>
-    <form runat="server" class="form-horizontal form-control">
+<body class="gry-bg pattern-3">
+    <form runat="server" class="form-horizontal form-control autoHeight">
         <asp:ScriptManager EnablePageMethods="true" runat="server">
             <Scripts>
             </Scripts>
         </asp:ScriptManager>
-        <nav class="navbar navbar-default">
+
+
+        <div class="pageWrapper boxed main-wrapper">
+            <div class="top-bar">
+
+                <ul class="top-info f-left">
+                    <li><i class="fa fa-envelope main-color"></i><b class="main-color"></b><a href="#">hockey@gmail.com.ar</a></li>
+                    <li><i class="fa fa-phone main-color"></i><b class="main-color"></b><a href="#">(0299) 456 1234</a></li>
+                    <li class="dropdown language-selector">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true"><i class="fa fa-flag main-color"></i>Independencia 805 1°Piso - Neuquen</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <asp:Label ID="lbl18" Font-Bold="true" runat="server" CssClass="control-label AlineadoIzquierda"></asp:Label>
+                        <%--<asp:Button ID="btnUsuarios" runat="server" Text="Usuarios" ForeColor="Black" OnClick="btnUsuarios_Click" />--%>
+                        <asp:Button ID="btnLogOff" CssClass="btn btn-info" runat="server" Text="Cerrar Sesion" OnClick="btnLogOff_Click" OnClientClick="return confirm('¿Desea cerrar la sesion?');" />
+                    </li>
+                    <%--<li><a class="btn" href="/Login.aspx">SALIR <span class="glyphicon glyphicon-log-out"></span></a></li>--%>
+                </ul>
+
+
+            </div>
+
+            <!-- Header start -->
+            <header class="top-head minimal no-border">
+                <div class="container p-r-3 p-l-3">
+                    <!-- Logo start -->
+                    <div class="logo">
+                        <a href="Default.aspx">
+                            <img src="imagenes/fhn-logo.jpg" /></a>
+                    </div>
+                    <!-- Logo end -->
+
+                    <div class="responsive-nav">
+                        <!-- top navigation menu start -->
+                        <nav class="top-nav boxes with-borders">
+                            <ul>
+                                <li class="selected"><a href="default.aspx"><span>Inicio</span></a></li>
+                                <li><a href="#"><span>Atajos</span></a>
+                                    <ul>
+                                        <li><a href="#"><span>ATAJOS</span></a>
+                                            <ul>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-plus fa-fw"></span>atajo 01</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-plus fa-fw"></span>atajo 02</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span>JUGADORES</span></a>
+                                    <ul>
+                                        <li><a runat="server" href="~/AltaJugador.aspx"><span class="glyphicon glyphicon-plus fa-fw"></span>Alta Jugador</a></li>
+                                        <li><a runat="server" href="~/EditarJugador.aspx"><span class="glyphicon glyphicon-edit fa-fw"></span>Editar Jugador</a></li>
+                                        <li><a runat="server" href="~/ListarJugadores.aspx"><span class="glyphicon glyphicon-list fa-fw"></span>Libro de Asociados</a></li>
+                                        <li><a runat="server" href="#">PASES</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span>CLUBES</span></a>
+                                    <ul>
+                                        <li><a runat="server" href="~/AltaClub.aspx"><span class="glyphicon glyphicon-plus fa-fw"></span>Afiliar Club</a></li>
+                                        <li><a runat="server" href="~/EditarClub.aspx"><span class="glyphicon glyphicon-edit fa-fw"></span>Editar Club</a></li>
+                                        <li><a runat="server" href="~/ListarClubes.aspx"><span class="glyphicon glyphicon-list fa-fw"></span>Clubes Afiliados</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span>REGISTROS CONTABLES</span></a>
+                                    <ul>
+                                        <li><a href="#"><span>Cuotas Jugadores</span></a>
+                                            <ul>
+                                                <li><a runat="server" href="~/AltaCuotaJugador.aspx"><span class="glyphicon glyphicon-plus fa-fw"></span>Nueva Cuota</a></li>
+                                                <li><a runat="server" href="~/EditarCuotaJugador.aspx"><span class="glyphicon glyphicon-edit fa-fw"></span>Editar Cuota</a></li>
+                                                <li><a runat="server" href="~/ListarCuotasJugador.aspx"><span class="glyphicon glyphicon-list fa-fw"></span>Listar Cuotas</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><span>Cuotas de Club</span></a>
+                                            <ul>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-plus fa-fw"></span>Nueva Cuota</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-edit fa-fw"></span>Editar Cuota</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-list fa-fw"></span>Listar Cuotas</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><span>Pagos Jugadores</span></a>
+                                            <ul>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-plus fa-fw"></span>Nuevo Pago</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-edit fa-fw"></span>Editar Pago</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-list fa-fw"></span>Lista Pagos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><span>Pagos de Club</span></a>
+                                            <ul>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-plus fa-fw"></span>Nuevo Pago</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-edit fa-fw"></span>Editar Pago</a></li>
+                                                <li><a runat="server" href="#"><span class="glyphicon glyphicon-list fa-fw"></span>Lista Pagos</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><span>PLANIFICACION</span></a>
+                                    <ul>
+                                        <li><a href="#"><span>TEMPORADAS</span></a>
+                                        </li>
+                                        <li><a href="#"><span>TORNEOS</span></a>
+                                        </li>
+                                        <li><a href="#"><span>DIVISIONES</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <%--<li runat="server" id="dropdownusuarios">
+                                    <a href="#"><span>Usuarios</span></a>
+                                    <ul>
+                                        
+                                    </ul>
+                                </li>--%>
+                                <li runat="server" id="dropdownSistema">
+                                    <a href="#"><span>Sistema</span></a>
+                                    <ul>
+                                        <li><a runat="server" href="~/Contenidos.aspx"><span class="glyphicon glyphicon-credit-card fa-fw"></span>Contenidos</a></li>
+                                        <li><a runat="server" href="~/AltaUsuario.aspx"><span class="glyphicon glyphicon-user fa-fw"></span>Usuarios</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </header>
+            <!-- Header start -->
+
+            <br />
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    <!--Aca iria el contenido de cada pagina-->
+                </asp:ContentPlaceHolder>
+                <footer>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <p>Hockey sobre Cesped - <%: DateTime.Now.Year %> - Sistema Informatico de FHN</p>
+                </footer>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <%--
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/Default.aspx">Sistema FHN</a>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/Default.aspx">Inicio</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">JUGADORES <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a runat="server" href="~/AltaJugador.aspx">Alta de Jugador</a></li>
-                            <li><a runat="server" href="~/EditarJugador.aspx">Editar Jugador</a></li>
-                            <li class="divider"></li>
-                            <li><a runat="server" href="~/ListarJugadores.aspx">Lista de Jugadores</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">CLUBES <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a runat="server" href="~/AltaClub.aspx">Alta de Club</a></li>
-                            <li><a runat="server" href="~/EditarClub.aspx">Editar Club</a></li>
-                            <li class="divider"></li>
-                            <li><a runat="server" href="~/ListarClubes.aspx">Lista de Clubes</a></li>
-                        </ul>
-                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">CUOTAS <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -83,13 +262,56 @@
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Sistema FHN</p>
             </footer>
-        </div>
+        </div>--%>
+
+
+
+        <!-- Back to top Link -->
+        <a id="to-top" href="#"><span class="fa fa fa-angle-up"></span></a>
+
+        <!-- Load JS plugins -->
+        <%--<script type="text/javascript" src="assets/js/jquery-1.12.0.min.js"></script>--%>
+        <!--este no va!!!-->
+
+        <script src="js/jquery-1.12.3.js"></script>
+        <%--<script src="js/bootstrap-datepicker.js"></script>--%>
+        <script src="js/bootstrap-select.js"></script>
+
+        <script type="text/javascript" src="assets/js/assets.js"></script>
+
+        <%--<!-- OWL SLIDER SCRIPTS  -->
+        <link rel="stylesheet" href="assets/css/sliders/owl.carousel.css" property='stylesheet' />
+        <script type="text/javascript" src="assets/js/sliders/owl.carousel.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#owl-slider").owlCarousel({
+                    navigation: true,
+                    items: 1
+                });
+            });
+        </script>--%>
+
+        <!-- general script file -->
+        <script type="text/javascript" src="assets/js/script.js"></script>
+
+
+
+
     </form>
 
-    <script src="js/jquery-1.12.3.js"></script>
+    <%--<script src="js/jquery-1.12.3.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-select.js"></script>--%>
+
+    <script>
+        function validarSoloNumeros(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 8) return true;
+            patron = /\d/;
+            return patron.test(String.fromCharCode(tecla));
+        }
+    </script>
 
 </body>
 </html>

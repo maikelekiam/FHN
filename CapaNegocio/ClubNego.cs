@@ -21,6 +21,22 @@ namespace CapaNegocio
         {
             return clubRepo.ListarClubes();
         }
+        public string TraerClub(int id)
+        {
+            return clubRepo.TraerClub(id);
+        }
+        public Club ObtenerClub(int id)
+        {
+            return clubRepo.ObtenerClub(id);
+        }
+        public void ActualizarClub(Club Club)
+        {
+            clubRepo.ActualizarClub(Club);
+        }
 
+        public List<Club> ListarUnicoClub(int id)
+        {
+            return clubRepo.ListarUnicoClub(id);
+        }
     }
 }

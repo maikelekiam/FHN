@@ -36,42 +36,55 @@ namespace CapaDominio
 			}
 		}
 		
-		private string usuario1;
-		public virtual string Usuario1
+		private string nombre;
+		public virtual string Nombre
 		{
 			get
 			{
-				return this.usuario1;
+				return this.nombre;
 			}
 			set
 			{
-				this.usuario1 = value;
+				this.nombre = value;
 			}
 		}
 		
-		private string password;
-		public virtual string Password
+		private string mail;
+		public virtual string Mail
 		{
 			get
 			{
-				return this.password;
+				return this.mail;
 			}
 			set
 			{
-				this.password = value;
+				this.mail = value;
 			}
 		}
 		
-		private int nivel;
-		public virtual int Nivel
+		private int grupo;
+		public virtual int Grupo
 		{
 			get
 			{
-				return this.nivel;
+				return this.grupo;
 			}
 			set
 			{
-				this.nivel = value;
+				this.grupo = value;
+			}
+		}
+		
+		private string contrasenia;
+		public virtual string Contrasenia
+		{
+			get
+			{
+				return this.contrasenia;
+			}
+			set
+			{
+				this.contrasenia = value;
 			}
 		}
 		

@@ -1,0 +1,100 @@
+.trv-top-cell{
+	position: absolute;
+	width: 96%;
+	padding: 30px;
+	left: 2%;
+	bottom: 0;
+	z-index: 8
+}
+.search-box-wrapper{
+	position: relative;
+	margin-top: -55px
+}
+.search-box-wrapper.tabs.gr-bg .nav>li:not(.active)>a{
+	background-color: rgba(255,255,255,.6);
+	border-top: 3px transparent solid !important;
+}
+.search-box-wrapper .nav-tabs{
+	border-bottom: 0
+}
+.search-box-wrapper .nav-tabs>li:first-child{
+	margin-left: 0 !important
+}
+.search-box-wrapper .nav-tabs>li>a{
+	padding: 17px 30px;
+	font-weight: 900;
+	margin: 0 2px 0 0 !important;
+	border-bottom: 0px !important;
+	border-right:0px !important;
+	border-left: 0px !important 
+}
+.search-box-wrapper .tab-pane{
+	padding: 45px 0 30px
+}
+.tourperiod{
+	float: right;
+	background-color: #444;
+	padding: 15px 10px;
+	text-align: center;
+	line-height: 1;
+}
+.tourperiod p{
+	line-height: 11px;
+	margin-bottom: 10px;
+}
+.tourdate{
+	position: relative;
+	overflow: hidden;
+}
+.tourtime{
+	float: left;
+	line-height: 65px;
+	margin: 0;
+	padding-left: 20px;
+}
+.tourtitle{
+	line-height: 65px;
+	padding-left: 20px;
+	margin-bottom: 0
+}
+.tourinfo{
+	padding: 20px
+}
+.offers-info{
+	margin: 10px 0 0;
+	padding: 0
+}
+.offers-info li{
+	display: inline-block;
+	margin: 0 5px;
+	border-left: 1px rgba(255,255,255,.3) solid;
+	padding-left: 15px;
+}
+.offers-info li:first-child{
+	margin-left: 0;
+	border-left: 0;
+	padding-left: 0;
+}
+.offers-info li b{
+	font-size: 20px;
+	font-weight: 900;
+	display: block;
+	margin-bottom: 0;
+	line-height: 1
+}
+.tourinfo .rate{
+	margin: 10px 0 15px
+}
+.travel .portfolio-item h4{
+	font-size: 20px !important;
+	margin-bottom: 5px !important
+}
+.travel .portfolio-item h4,.travel .portfolio-item p{
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: center;
+}
+.travel .portfolio-item .rate{
+	text-align: center;
+	margin: -10px auto 0
+}

@@ -2,20 +2,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+
         <asp:Panel ID="Panel1" CssClass="panel panel-default" runat="server">
             <div class="panel-heading">
-                <h3>Formulario EDITAR Jugador</h3>
+                <h3>Datos del JUGADOR</h3>
             </div>
 
             <!--LISTA CON LOS JUGADORES DE LA BD-->
             <div class="form-group">
+                <br />
                 <div class="col-md-4 col-md-offset-2">
                     <asp:DropDownList ID="ddlJugador" runat="server"
-                        Width="280"
+                        Width="500"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
                         BackColor="WhiteSmoke"
                         ForeColor="#000066"
                         Font-Bold="true"
-                        CssClass="form-control"
                         DataTextField="nombre"
                         AutoPostBack="True"
                         AppendDataBoundItems="true"
@@ -24,7 +27,6 @@
                     </asp:DropDownList>
                 </div>
                 <div style="margin-left: auto; margin-right: auto; text-align: right;">
-
                     <div class="col-md-1 col-md-offset-1">
                         <asp:Label ID="lblIdJ" runat="server" Text="ID = " CssClass="control-label"> </asp:Label>
                     </div>
@@ -35,10 +37,7 @@
                     </div>
                 </div>
             </div>
-
-
             <!--NOMBRE-->
-            <br />
             <div class="form-group">
                 <asp:Label ID="lblNombre" runat="server" Text="NOMBRE" CssClass="col-md-2 control-label"></asp:Label>
                 <div class="col-md-6">
@@ -58,7 +57,6 @@
                 <div class="col-md-4">
                     <asp:DropDownList ID="ddlTipoDocumento" runat="server"
                         CssClass="selectpicker form-control show-tick"
-                        data-live-search="true"
                         data-width="fit">
                         <asp:ListItem Value="DNI">DNI</asp:ListItem>
                         <asp:ListItem Value="DU">DU</asp:ListItem>
@@ -77,21 +75,23 @@
             <!--FECHA NACIMIENTO-->
             <div class="form-group">
                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="FECHA DE NACIMIENTO" CssClass="col-md-2 control-label"></asp:Label>
-                <asp:DropDownList ID="ddlDia" runat="server"
-                    CssClass="selectpicker form-control show-tick"
-                    data-live-search="false"
-                    data-width="70">
-                </asp:DropDownList>
-                <asp:DropDownList ID="ddlMes" runat="server"
-                    CssClass="selectpicker form-control show-tick"
-                    data-live-search="false"
-                    data-width="150">
-                </asp:DropDownList>
-                <asp:DropDownList ID="ddlAnio" runat="server"
-                    CssClass="selectpicker form-control show-tick"
-                    data-live-search="false"
-                    data-width="100">
-                </asp:DropDownList>
+                <div class="col-md-6">
+                    <asp:DropDownList ID="ddlDia" runat="server"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
+                        data-width="90">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlMes" runat="server"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
+                        data-width="150">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlAnio" runat="server"
+                        CssClass="selectpicker form-control show-tick"
+                        data-live-search="true"
+                        data-width="110">
+                    </asp:DropDownList>
+                </div>
             </div>
 
             <!--TELEFONO-->
@@ -135,7 +135,6 @@
                 <div class="col-md-4">
                     <asp:DropDownList ID="ddlSector" runat="server"
                         CssClass="selectpicker form-control show-tick"
-                        data-live-search="true"
                         data-width="280px">
                         <asp:ListItem Value="DAMAS">Damas</asp:ListItem>
                         <asp:ListItem Value="CABALLEROS">Caballeros</asp:ListItem>
@@ -151,7 +150,6 @@
                         ForeColor="#000066"
                         CssClass="selectpicker form-control show-tick"
                         data-live-search="true"
-                        DataTextField="nombreInstitucional"
                         AutoPostBack="False"
                         AppendDataBoundItems="true">
                         <asp:ListItem Value="-1">&lt;Seleccione Club&gt;</asp:ListItem>
@@ -165,24 +163,51 @@
                     <asp:CheckBox ID="chkActivo" runat="server" />
                 </div>
             </div>
+        </asp:Panel>
 
-
-
-            <!--BOTON-->
+        <asp:Panel ID="Panel2" CssClass="panel panel-default" runat="server">
+            <div class="panel-heading">
+                <h3>Contacto Emergencia</h3>
+            </div>
+            <!--NOMBRE Y APELLIDO-->
             <div class="form-group">
-                <div class="col-md-2 col-md-offset-2">
-                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CssClass="btn btn-info form-control" OnClick="btnActualizar_Click" />
+                <br />
+                <asp:Label ID="lblContactoNombre" runat="server" Text="NOMBRE y APELLIDO" CssClass="col-md-2 control-label"></asp:Label>
+                <div class="col-md-6">
+                    <asp:TextBox ID="txtContactoNombre" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
             </div>
-
-
-
-
-
-
-
-
+            <!--PARENTEZCO-->
+            <div class="form-group">
+                <asp:Label ID="lblContactoParentezco" runat="server" Text="PARENTESCO" CssClass="col-md-2 control-label"></asp:Label>
+                <div class="col-md-6">
+                    <asp:TextBox ID="txtContactoParentezco" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
+            <!--TELEFONO-->
+            <div class="form-group">
+                <asp:Label ID="lblContactoTelefono" runat="server" Text="TELEFONO" CssClass="col-md-2 control-label"></asp:Label>
+                <div class="col-md-4">
+                    <asp:TextBox ID="txtContactoTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+            </div>
         </asp:Panel>
+
+
+        <!--BOTON ACTUALIZAR-->
+        <div class="form-group">
+            <div class="col-md-2 col-md-offset-2">
+                <asp:Button ID="btnActualizar" runat="server" Text="ACTUALIZAR" Width="250" CssClass="boton_azul" OnClick="btnActualizar_Click" />
+            </div>
+        </div>
+
+
+
+
+
+
+
+
     </div>
 
 </asp:Content>

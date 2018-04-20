@@ -1,0 +1,31 @@
+.lg-countdown.event-count div{
+	border-style:solid;
+	padding: 20px 30px;
+	margin-top: 15px;
+	color:#fff;
+}
+.eventform-con{
+	padding-top: 8px
+}
+.btn-evt{
+	padding: 13px 16px
+}
+.evt-price{
+	border-bottom: 1px #DCDCDC solid;
+	margin: 0 -15px
+}
+.evt-pric-vl{
+	text-align: center;
+	line-height: 160px;
+	font-size: 40px;
+	font-weight: 900
+}
+.conf-tabs{
+	position: relative;
+	margin: -25px 15px 0;
+	border: 5px #eee solid;
+	background-color: #fff 
+}
+.evt-tab > li > a{
+	padding: 30px !important
+}

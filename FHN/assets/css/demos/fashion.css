@@ -1,0 +1,22 @@
+.fashion-font{
+	font-family: 'Aguafina Script', cursive;
+}
+.wed-copl-img{
+	margin: 0 auto 20px;
+	border-radius: 50px;
+	overflow: hidden;
+	border-top-left-radius: 0;
+	border-bottom-right-radius: 0;
+	display: table;
+}
+.wed-count-H{
+	height: 80px
+}
+.lg-countdown.wed-count div{
+	background-color: rgba(255,255,255,.2);
+	border:0;
+	border-radius: 5px;
+	padding: 20px 30px;
+	margin-top: 15px;
+	color:#fff;
+}
